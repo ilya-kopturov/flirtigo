@@ -1,0 +1,7 @@
+#ATTENTION BILLING COMPANIES!!!
+#This site is using the shared .htpasswd file specified in AuthUserFile. Please use the same file when you set up an aditional billing system!
+AuthUserFile /home/httpd/vhosts/flirtigo.com/html/Zombaio_Data/.htpasswd
+AuthType Basic
+AuthName "FlirtiGo"
+
+require valid-user

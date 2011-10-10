@@ -1,0 +1,118 @@
+body{
+	margin:0 0 0 0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#333333;
+}
+a{
+	text-decoration:none;
+	color:#0000FF;
+}
+.copyright{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#FFFFFF
+}
+.login{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:18px;
+	color:#FFFFFF;
+	font-weight:bold
+}
+.logintextsmall{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#FFFFFF
+}
+.logintextbig{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#FFFFFF
+}
+.logininput{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	color:#333333
+}
+.textblack{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	color:#000000
+}
+.catmenu{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#000000;
+	font-weight:bold
+}
+.subcatmenu{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#333333
+}
+.subcatmenuover{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#FFFFFF
+}
+.pagetitle{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:18px;
+	color:#006699;
+	font-weight:bold
+}
+.filtername{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#FFFFFF;
+	font-weight:bold
+}
+.filternameblack{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#333333;
+	font-weight:bold
+}
+.filterresults{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#99FF00;
+	font-weight:bold
+}
+.tablename{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#990000;
+	font-weight:bold
+}
+.tablecateg{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#333333;
+	font-weight:bold
+}
+.tabletext{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333333
+}
+.button /* Used for site buttons */ { font-family: Arial; font-size: 9pt; FONT-WEIGHT: 
+bold; LETTER-SPACING: 1pt; background: #EFEDE7; border-bottom: 0px solid #104A7B; 
+border-right: 1px solid #104A7B; border-left: 1px solid #FFCA79; border-top:0px 
+solid #FFCA79; color:#000000; text-decoration:none; cursor: hand ; padding-top: 
+1px; padding-right: 5px; padding-bottom: 8px; padding-left: 5px ; border: 1px 
+#660000 solid;  height: 20px }
+.admin_button1
+{
+ font-family:Geneva, Arial, Helvetica, sans-serif;
+ color:#003366;
+ font-size:11px;
+ border:1px solid #B5C2CA;
+ outline:2px outset #B5C2CA;
+ width:100px;
+ vertical-align:middle;
+ text-align:center;
+ background-color:#FFFFFF;
+ margin-bottom:5px;
+ font-weight:bold;
+}

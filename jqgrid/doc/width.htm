@@ -1,0 +1,44 @@
+<html><head>
+   <title>Width</title>
+   <meta name="generator"  content="HelpMaker">
+   <meta name="keywords"  content="Welcome">
+   <link rel="stylesheet"  type="text/css"  href="hm.css"></head>
+<body bgcolor="#FFFCEA">
+
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="#C0C0C0">
+  <tr>
+    <td align="left">
+      <body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Width</span></font></div></body></html>
+
+    </td>
+    <td align="right">
+      <font face="Arial"  size="2">
+        <a href="height.htm">Previous</a>&nbsp;<a href="WhatisjqGrid.htm">Top</a>&nbsp;<a href="simplemultiselect.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The width of the grid can be controlled different ways and is set only in pixels.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Related options in options array:<br><b>width</b><br>
+shrinkToFit<br>
+Related option in colModel - <b>width</b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">By default<b> width</b> parameter in options array is not set, which means that the width 
+of the grid is calculated as sum of the width parameter in colModel. If the width 
+parameter in colModel is not set the default width is 150.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Before some  time one guy asked me - why the width of the grid is not equal to the 
+sum of the width in colModel? The sum is 500px, but I have 515px!<br><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The answer for me was not easy :). After some investigations I discover that we 
+should pay attention of the CSS and what is set for that elements in the CSS.<br><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The true answer is - the width of grid is equal to the sum of the width in colModel +<br>
+padding and border settings for the cell in CSS.<br><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">That is: if we have 5 colums which sum is 500 and in the CSS we have the flowing<br>
+definition for the table data:</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">table.scroll tbody td  {<br>
+    padding: 2px;<br>
+    text-align: left;<br>
+    border-bottom: 1px solid #D4D0C8;<br>
+    border-left: 1px solid #D4D0C8; <br>
+    text-overflow: ellipsis;<br>
+    overflow: hidden;<br>
+    white-space: nowrap;<br>
+}</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">the grid width will be 500 + 5*(2 padding pixels + 1 border left pixel) = 515<br>
+In other words we should add extra 3 pixels for every column - 2 padding and 1 
+border-left.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">In some cases it is needed to have fixed width independent of the width set in 
+colModel.<br><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Here we can play with the options in options array -<b> width and shrinkToFit.</b><br>
+The default value of shrinkToFit is true which means that if we set the width 
+parameter all of the initial width of columns are recalculated as:</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b><br></b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>width/swidth*colModel.width</b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">where<br><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>width</b> is width that we want to have<br><b>swidth</b> is the sum of width set in colModel<br><b>colModel.width</b> is the width for the column.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">If the value of <b>shrinkToFit is false</b> then we do not make any recalculation of the 
+initial column width and grid will have the  width set in options array.</span></font></div><div align="left">&nbsp;&nbsp;</div></body></html>
+
+</body></html>

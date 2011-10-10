@@ -1,0 +1,7 @@
+AuthName "Protected Zombaio Data - No Access"
+AuthType Basic
+AuthGroupFile /dev/null
+
+<limit GET POST PUT DELETE>
+deny from all
+</limit>

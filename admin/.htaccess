@@ -1,0 +1,39 @@
+AuthName "Administration"
+AuthUserFile /home/httpd/vhosts/flirtigo.com/.htpasswd
+AuthType basic
+<Limit GET>
+Order deny,allow
+deny from all
+
+#justin vacation 
+allow from  208.114.113.101 
+
+# justin  home
+allow from 78.105.125.58
+allow from  91.135.5.213
+# voda 3g card
+allow from 212.183.
+# iphone
+allow from 81.158.133.245
+# o2 card
+allow from 82.132.
+# t mobile card
+allow from 149.254.
+# 3 mobile wireless
+allow from 94.197.
+# justin sandbanks
+allow from .btcentralplus.com
+# falmouth
+allow from 86.163.212.97
+# albert sq
+allow from 92.0.
+#mar
+allow from 95.77.202.121
+allow from 76.74.237.13
+#bj ip
+allow from 79.112.
+
+Require valid-user
+</Limit>
+
+php_value include_path ".:../includes:/usr/share/pear:/usr/share/php"

@@ -1,0 +1,578 @@
+<html><head>
+   <title>Options</title>
+   <meta name="generator"  content="HelpMaker">
+   <meta name="keywords"  content="Welcome">
+   <link rel="stylesheet"  type="text/css"  href="hm.css"></head>
+<body bgcolor="#FFFCEA">
+
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="#C0C0C0">
+  <tr>
+    <td align="left">
+      <body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Options</span></font></div></body></html>
+
+    </td>
+    <td align="right">
+      <font face="Arial"  size="2">
+        <a href="callingconvention.htm">Previous</a>&nbsp;<a href="WhatisjqGrid.htm">Top</a>&nbsp;<a href="apimethods.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><body><div align="left">&nbsp;&nbsp;</div><table width="576"  cellpadding="4"  cellspacing="0"  style="border-collapse: collapse; border: none">
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>Option Name</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>Description</b></span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>url</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type : string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The url of the  file that holds the request . Default value: 
+    null</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>datatype</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Defines what type of information to expect to represent 
+    data in the grid. Valid options are</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">xml - we expect xml data</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">xmlstring - we expect xml data as string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">json - we expect JSON data</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">jsonstring - we expect JSON data as string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">clientSide - we expect data defined at client side  (array 
+    data)</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value : xml</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>datastr</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The string of data when datatype parameter is set to 
+    xmlstring or jsonstring</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: null</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>mtype</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Defines the type of request to make (&quot;POST&quot; or &quot;GET&quot;)</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: GET</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>colNames</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: array</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Array which describes the column labels in the grid </span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: [] -empty array</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>colModel</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: array</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Array which describes the parameters of the columns. For 
+    a full description of all valid values see </span></font><a href="colmodelapi.htm"><font face="Bitstream Vera Sans"  color="#0000ff"><span style=" font-size:10pt"><u>colModel API</u></span></font></a><font face="Bitstream Vera Sans"><span style=" font-size:10pt">.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: [] - empty array</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>xmlReader</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: array</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Array which describes the structure of the expected xml 
+    data. For a full description refer to Chapter 4 Data Types.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">{<br>
+                root: &quot;rows&quot;,<br>
+                row: &quot;row&quot;,<br>
+                page: &quot;rows&gt;page&quot;,<br>
+                total: &quot;rows&gt;total&quot;,<br>
+                records : &quot;rows&gt;records&quot;,<br>
+                repeatitems: true,<br>
+                cell: &quot;cell&quot;,<br>
+                id: &quot;[id]&quot;, <br>
+                subgrid: {root:&quot;rows&quot;, row: &quot;row&quot;, 
+    repeatitems: true, cell:&quot;cell&quot;}</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">}</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>jsonReader</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: array</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Array which describes the structure of the expected json 
+    data. For a full description refer to Chapter 4 Data Types.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">{<br>
+                root: &quot;rows&quot;,<br>
+                page: &quot;page&quot;,<br>
+                total: &quot;total&quot;,<br>
+                records: &quot;records&quot;,<br>
+                repeatitems: true,<br>
+                cell: &quot;cell&quot;,<br>
+                id: &quot;id&quot;,<br>
+                subgrid: {root:&quot;rows&quot;, repeatitems: true, 
+    cell:&quot;cell&quot;}<br>
+    }</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>height</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string </span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The height of the grid. Can be set as percentage or any 
+    valid measured value.  </span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: 150px.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>rowheight</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: integer</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This option defines the height of the single row . If is set 
+    the height of the grid is changed according to the number 
+    of the returned rows and the scroll bar does not appear</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: null</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>width</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: number</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">If this option is not set, the width of the grid is a sum of 
+    the width&rsquo;s of the columns defined in the <b>colModel</b> (in 
+    pixels). If this option is set the initial width of each column 
+    is set according to the value of shrinkToFit option. See 
+    below. </span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: none</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>shrinkToFit</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: boolean</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This option describes the type of calculation of the initial 
+    width of each column against with the width of the grid. If 
+    the value is <b>true</b> and the value in width option is set then:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Every column width is scaled according to the defined 
+    option width. Example: if we define two columns with a 
+    width of 80 and 120 pixels, but want the grid to have a 
+    300 pixels - then the columns are recalculated as follow: 
+    1- column = 300(new width)/200(sum of all 
+    width)*80(column width) = 120 and 2 column = 
+    300/200*120 = 180.  The grid width is 300px.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">If the value is <b>false</b> and the value in width option is set 
+    then:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The width of the grid is the width set in option. The 
+    column width are not recalculated and have the values 
+    defined in colModel.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: true</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>page</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: integer</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The requested initial page number when we use 
+    datatypes xml or json (data returned from server)</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: 1</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>sortorder</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The initial  sorting order when we use datatypes xml or 
+    json (data returned from server)</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: asc</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>sortname</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The initial  sorting name when we use datatypes xml or 
+    json (data returned from server)</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: empty string</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  height="51"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>rowNum</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  height="51"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: integer</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The initial number of rows that must be returned from the 
+    server</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: 20</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>pager</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: DOM element</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Sets the pager bar for the grid. Must be a valid html 
+    element. If the element has class &ldquo;scroll&rdquo;, then the width 
+    is equal to the grid.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>rowList</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: array</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This parameter construct a select box element in the 
+    pager in which the user can change the number of the 
+    visible rows. Default value: [] - empty array.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>viewrecords</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: boolean</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Display the total records from the query in the pager bar.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: false</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>recordtext</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Displays a text before the viewed total records.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: Rows</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>firstimg , previmg , 
+    nextimg, lastimg</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Liks to image url which are used in the pager bar for the 
+    first, previous, next and last buttons.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: first.gif, prev.gif, next.gif, last.gif</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>sortascimg, 
+    sortdescimg</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Liks to image url which are used when the user sort a 
+    column.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: sort_asc.gif, sort_desc.gif</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>loadtext</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The text which appear when requesting and sorting data.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: Loading...</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>altRows</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: boolean</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Set a zebra like grid.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: true</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>imgpath</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Defines the path to the images that are used in the grid. 
+    Set this option whit out / at end.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: '' - empty string</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>caption</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Defines the Caption layer for the grid. This caption appear 
+    above the Header layer. If the string is empty the caption 
+    does not appear.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: '' - empty string</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>hidegrid</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: boolean</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Enables or disables the hide grid button, which appear 
+    into the right side of the Caption layer. Have sense only if 
+    caption parameter is not empty string.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: true</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>loadonce</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: boolean</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">If this flag is set to true, the grid load only once the data 
+    from the server according to the parameter datatype. 
+    After the first request (xml or json) the datatype 
+    parameter is set automatically to clientSide. All other 
+    manipulations are done at client side. The manipulations 
+    at pager (if any) are disabled.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: false</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>multiselect</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: boolean</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">If this flag is set to true a multi selection of rows is 
+    enabled. A new column at left side is added. Can be used 
+    with any datatype option.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: false</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>multikey</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This parameter have sense only multiselect option is set 
+    to true. Defines the key which will be pressed when we 
+    make multiselection. The possible values are:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">shiftKey - the user should press Shift Key</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">altKey - the user should press Alt Key</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">ctrlKey - the user should press Ctrl Key</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: '' empty string.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>subGrid</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: boolean</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Is set to true this enables using of sub grid. Add additional 
+    column at the left side of the grid. For more information 
+    see </span></font><a href="settingsubgrid.htm"><font face="Bitstream Vera Sans"  color="#0000ff"><span style=" font-size:10pt"><u>Setting subgrid</u></span></font></a></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: false</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>subGridUrl</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This option has effect only if subGrid option is set to true. 
+    This describes the url for the subgrid data. Additinally to 
+    this url is added parameter &ldquo;id&rdquo; which is the id of the row.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: '' empty string</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>subGridModel</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: array</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This option has effect only if subGrid option is set to true. 
+    This option describes the model of the subgrid. For more 
+    details see Chapter XX </span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default Value: [] - empty array</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>editurl</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Defines the url for inline and form editing.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: null</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>onSelectRow</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: function</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameter: rowid - the id of the selected row</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Raised immediately after row was clicked.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Calling convention:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">onSelectRow: function( rowid) {</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">// here is the code</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">}</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default: null</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>ondblClickRow</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: function</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameter: rowid - the id of the selected row</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Raised immediately after row was double clicked.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Calling convention:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">ondblClickRow: function( rowid) {</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">// here is the code</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">}</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default: null</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>onRightClickRow</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: function</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameter: rowid - the id of the selected row</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Raised immediately after row was right clicked.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Calling convention:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">onRightClickRow: function( rowid) {</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">// here is the code</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">}</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default: null</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  height="176"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>onSortCol</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  height="176"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: function</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">index - the index name from colModel</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">colindex - the index of column</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Raised immediately after sortable column was clicked and 
+    before sorting the data</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Calling convention:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">onSorCol: function( index, colindex) {</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">// here is the code</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">}</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default: null</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>onPaging</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: function</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters: none</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This event fires after click on page button and before data 
+    population. Also works when the user enter new page 
+    number in the page input box.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>loadComplete</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: function</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters: none</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This event is executed immediately after every server 
+    request </span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default: null</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>subGridRowExpanded</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: function</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">pID - the unique id of the div element where we can put 
+    contents when subgrid is enabled</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">id - the id of the row</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This even raises when subgrid is enabled and is executed 
+    when the user click on the plus icon of the grid. Can be 
+    used to put custom data in the subgrid. </span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default: null</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>subGridRowColapsed</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: function</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">pID - the unique id of the div element where we can put 
+    contents when subgrid is enabled</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">id - the id of the row</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This event raises when the user click on the minus icon. </span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default: null</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>postData</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: array</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This array is passed directly to the url. This is associative 
+    array and can be used this way: {name1:value1...}. See 
+    API methods for manipulation.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default: empty array</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>userData</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: array</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This array contain custom information from the request. 
+    Can be used at any time. See API methods for 
+    manipulation</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default: empty array.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>toolbar</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: array</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This option defines the toolbar of the grid. This is array 
+    with two values in which the first value enables the 
+    toolbar and the second defines the position relative to 
+    body Layer. Possible values &quot;top&quot; or &quot;bottom&quot;</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default; [false,&quot;top&quot;]</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="174"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>$.jgrid.default</b></span></font></div>
+    </td>
+    <td valign="top"  width="402"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: array</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This array is used to define a common grid option in the 
+    application. Typically this can be called once to set a 
+    common grid parameters. Note that all parameters can be 
+    changed. Typical implementation; 
+    $.expend($.jgrid.defaults,{rowNum:10})</span></font></div>
+    </td></tr></table><div align="left">&nbsp;&nbsp;</div></body></html>
+
+</body></html>

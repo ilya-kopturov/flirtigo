@@ -1,0 +1,60 @@
+<html><head>
+   <title>xmlstring</title>
+   <meta name="generator"  content="HelpMaker">
+   <meta name="keywords"  content="Welcome">
+   <link rel="stylesheet"  type="text/css"  href="hm.css"></head>
+<body bgcolor="#FFFCEA">
+
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="#C0C0C0">
+  <tr>
+    <td align="left">
+      <body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">xmlstring</span></font></div></body></html>
+
+    </td>
+    <td align="right">
+      <font face="Arial"  size="2">
+        <a href="xmlfile.htm">Previous</a>&nbsp;<a href="WhatisjqGrid.htm">Top</a>&nbsp;<a href="json.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>4.1.2  xmlstring</b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The xmlstring option has the same features as xml. The only difference is that the 
+data is passed as string. In this case we need to have a valid xml data string. To do 
+that we can use a datastr option. This example show how to do that.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span><span style=" font-size:10pt">&lt;script&gt;</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">var mystr =<br>
+&quot;&lt;?xml version='1.0' encoding='utf-8'?&gt;<br>
+&lt;invoices&gt;<br>
+    &lt;rows&gt;<br>
+        &lt;row&gt;<br>
+            &lt;cell&gt;data1&lt;/cell&gt;<br>
+            &lt;cell&gt;data2&lt;/cell&gt;<br>
+            &lt;cell&gt;data3&lt;/cell&gt;<br>
+            &lt;cell&gt;data4&lt;/cell&gt;<br>
+            &lt;cell&gt;data5&lt;/cell&gt;<br>
+            &lt;cell&gt;data6&lt;/cell&gt;    <br>
+        &lt;/row&gt;<br>
+    &lt;/rows&gt;<br>
+&lt;/invoices&gt;&quot;;</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">jQuery(document).ready(function(){ <br>
+    jQuery(&quot;#list&quot;).jqGrid({<br>
+        datatype: 'xmlstring',<br>
+        datastr : mystr,<br>
+        colNames:['Inv No','Date', 'Amount','Tax','Total','Notes'],<br>
+        colModel :[ <br>
+        {name:'invid',index:'invid', width:55, sorttype:'int'}, <br>
+        {name:'invdate',index:'invdate', width:90, sorttype:'date', datefmt:'Y-m-d'}, <br>
+        {name:'amount',index:'amount', width:80, align:'right',sorttype:'float'}, <br>
+        {name:'tax',index:'tax', width:80, align:'right',sorttype:'float'}, <br>
+        {name:'total',index:'total', width:80,align:'right',sorttype:'float'}, <br>
+        {name:'note',index:'note', width:150, sortable:false} ],<br>
+        pager: jQuery('#pager'),<br>
+        rowNum:10,<br>
+        viewrecords: true,<br>
+        imgpath: 'themes/basic/images',<br>
+        caption: 'My first grid'<br>
+}); <br>
+}); <br>
+&lt;/script&gt;</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span><span style=" font-size:10pt">As you can see there is another option in colModel - sorttype. This option describes 
+the type of particular column. It is important to note that after reading the xml data 
+string the datatype parameter is set to clientSide (see Array data). Reason for this is 
+that after this operation<br>
+we should use client side sorting.</span></font></div><div align="left">&nbsp;&nbsp;</div></body></html>
+
+</body></html>

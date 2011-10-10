@@ -1,0 +1,41 @@
+<html><head>
+   <title>How it works</title>
+   <meta name="generator"  content="HelpMaker">
+   <meta name="keywords"  content="Welcome">
+   <link rel="stylesheet"  type="text/css"  href="hm.css"></head>
+<body bgcolor="#FFFCEA">
+
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="#C0C0C0">
+  <tr>
+    <td align="left">
+      <body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">How it works</span></font></div></body></html>
+
+    </td>
+    <td align="right">
+      <font face="Arial"  size="2">
+        <a href="doineedtopay.htm">Previous</a>&nbsp;<a href="WhatisjqGrid.htm">Top</a>&nbsp;<a href="howtoinstall.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Understanding this will help you to work better with jqGrid and use the full 
+capabilities of the plugin.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">In all cases we should understand that we have two major divisions:</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Server-side manipulation &ndash; I call it server layer and</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Client side representation - I call it representation layer.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">With other words jqGrid is component that helps you in easy way to represent 
+database information at client side using a server-side technology. Moreover it helps 
+you to manipulate that data back to the database.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">What is server-side manipulation (SSM)? There are many definitions on that, but I try 
+to explain it in terms of jqGrid.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Basically SSM means the server handles the editing and not the users&rsquo; browser. SSM 
+isn&rsquo;t something that is visible within a web page. Everything is done server side as 
+with most programming languages. Basically it&rsquo;s a server side command that tells 
+the server to place a file or text within the page once it is called from a user.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">In terms of jqGrid this means that you should care about this &ndash; you must have a piece 
+of code that deals with information stored into the database using some scripting 
+language and web server. Using this code you should return requested information 
+back to the client (web browser). This is done with Ajax at client side. jqGrid uses 
+Ajax calls to retrieve the requested information and represent it to client using Java 
+Script language.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Having the needed (requested) information jqGrid construct the representation 
+(tabular data) described from you in the so called column Model. To achieve a better 
+representation jqGrid uses CCS (Cascading Style Sheet).</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The constructed tabular data at client side has:</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Caption layer</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Header layer</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Body layer</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Navigation layer</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><img src="howitworksb1.JPG"  width="684"  height="336"  border="0"  alt="graphic"></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Caption layer contain common information for the represented data.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Header layer contain information about the columns &ndash; labels, width and etc. Later we 
+can see what we can do more with this.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Body layer is actually the requested data from the server.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Navigation layer contain additional information from the requested data and actions 
+for requesting little pieces of information &ndash; in the literature called paging. Note that 
+the navigation layer can be placed not only at bottom of the grid. Additionally you 
+can place actions for editing, deleting, adding and searching data.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The minimum for the representing the data are Header layer and Body layer. Latter 
+we will see haw we can achieve this.</span></font></div><div align="left">&nbsp;&nbsp;</div></body></html>
+
+</body></html>

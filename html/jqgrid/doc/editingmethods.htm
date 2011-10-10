@@ -1,0 +1,36 @@
+<html><head>
+   <title>Editing Methods</title>
+   <meta name="generator"  content="HelpMaker">
+   <meta name="keywords"  content="Welcome">
+   <link rel="stylesheet"  type="text/css"  href="hm.css"></head>
+<body bgcolor="#FFFCEA">
+
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="#C0C0C0">
+  <tr>
+    <td align="left">
+      <body><div align="left"><font face="Arial"><span style=" font-size:10pt">Editing Methods</span></font></div></body></html>
+
+    </td>
+    <td align="right">
+      <font face="Arial"  size="2">
+        <a href="initialization.htm">Previous</a>&nbsp;<a href="WhatisjqGrid.htm">Top</a>&nbsp;<a href="editingexample.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">We have a three methods to manipulate the data.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>editRow( rowid, keys, oneditfunc, succesfunc, url, extraparam, 
+aftersavefunc )</b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">where </span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>rowid</b> is the id of the row to edit</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>keys</b> - when set to true we can use Enter key to save the row and Esc to cancel 
+editing.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>oneditfunc</b> - fires after succes editing of row. Parameter passed to this function is 
+the id of the row.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters <b>succesfunc, url, extraparam, aftersavefunc</b> have sense only when 
+keys parameter is set to true. These parameters are passed to saveRow method 
+when a Enter key is pressed. For more information see saveRow method below.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">When this method is called on particular row we actually read the data for the 
+editable fields and construct the appropriate elements defined in edittype and 
+editoption. </span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This method can be called only on already constructed grid.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>saveRow (rowid, succesfunc, url, extraparam, aftersavefunc)</b> </span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">where</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>rowid</b> is the id of the row to save</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>succesfunc</b> if defined this function is called immediately after the request is 
+successfully. To this function is passed the data returned from the server. Depending 
+on the data from server this function should return true or false.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>url</b> when defined this parameter replaces the editurl parameter from options array.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>extraparam</b> is array of type name:value. When set these values are posted again 
+with the oter values to the server.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>aftersavefunc</b>&#160; - when defined this function is called after the data is saved to the 
+server. Parameter passed to this function is the rowid and the result from the 
+request.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">When this method is called to particular row the data is POSTED to the server in 
+format name:value, where the name is a name from colModel and the value is the 
+new value.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Additionally to the posted data is added a pair id=rowid.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This method can be called only on already constructed grid.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>restoreRow(rowid) </b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">where </span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>rowid</b> is the row to restore</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This method restores the data to original values before the editing of the row.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This method can be called only on already constructed grid.</span></font></div><div align="left">&nbsp;&nbsp;</div></body></html>
+
+</body></html>

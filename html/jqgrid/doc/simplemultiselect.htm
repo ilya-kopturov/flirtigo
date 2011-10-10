@@ -1,0 +1,34 @@
+<html><head>
+   <title>Simple multiselect</title>
+   <meta name="generator"  content="HelpMaker">
+   <meta name="keywords"  content="Welcome">
+   <link rel="stylesheet"  type="text/css"  href="hm.css"></head>
+<body bgcolor="#FFFCEA">
+
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="#C0C0C0">
+  <tr>
+    <td align="left">
+      <body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Simple multiselect</span></font></div></body></html>
+
+    </td>
+    <td align="right">
+      <font face="Arial"  size="2">
+        <a href="width.htm">Previous</a>&nbsp;<a href="WhatisjqGrid.htm">Top</a>&nbsp;<a href="multiselectwithkey.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Multi selection is a way to select more than one row in grid and after that to perform 
+some actions with the selected rows. jqGrid allow a more than one way of multi 
+selection.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Related options in options array<br><b>multiselect</b><br>
+multikey</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Related methods:  <b>getMultiRow, getSelectedRow </b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b><br></b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The default value of multiselect is false, which disables this feature by default. When 
+multiselect is set to true a additional column is added at left side of the grid. This row 
+add additional 28 px to the grid width.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span><span style=" font-size:10pt">When the grid is constructed the content of this column if filled with a check box 
+element. When we select some row the check box become a state checked. When we 
+select another row the previous row does not change the state. When we click on a 
+row that is selected, the state becomes unchecked and the row is unselected.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><img src="simplemultiselectb1.PNG"  width="706"  height="213"  border="0"  alt="graphic"></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">As seen on the figure at a header we have a common check box. When we check this 
+box all the rows will be selected. When we unchecked this box all the rows are 
+unchecked.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">To obtain selected rows we can use <b>getMultiRow</b> method. Using our example we 
+can write this</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">jQuery(&quot;#list&quot;).getMultiRow(); ==&gt; [&quot;11&quot;,&quot;9&quot;]</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This command return array with the selected rows. The values in array are the id's of 
+the selected rows.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The line </span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">jQuery(&quot;#list&quot;).getSelectedRow(); </span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">will return the id of the last selected row. This is only a scalar value.</span></font></div><div align="left">&nbsp;&nbsp;</div></body></html>
+
+</body></html>

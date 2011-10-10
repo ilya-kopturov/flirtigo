@@ -1,0 +1,181 @@
+<html><head>
+   <title>colModel API</title>
+   <meta name="generator"  content="HelpMaker">
+   <meta name="keywords"  content="Welcome">
+   <link rel="stylesheet"  type="text/css"  href="hm.css"></head>
+<body bgcolor="#FFFCEA">
+
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="#C0C0C0">
+  <tr>
+    <td align="left">
+      <body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">colModel API</span></font></div></body></html>
+
+    </td>
+    <td align="right">
+      <font face="Arial"  size="2">
+        <a href="apimethods.htm">Previous</a>&nbsp;<a href="WhatisjqGrid.htm">Top</a>&nbsp;<a href="settingsubgrid.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Syntax:</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">colModel : [ {name:'name1', index:'index1'...},{...}...]</span></font></div><div align="left">&nbsp;&nbsp;</div><table border="1"  width="576"  cellpadding="3"  cellspacing="0"  style="border-collapse: collapse; border: none">
+    <tr>
+    <td valign="top"  width="167"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Option</span></font></div>
+    </td>
+    <td valign="top"  width="407"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Description</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="167"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">name</span></font></div>
+    </td>
+    <td valign="top"  width="407"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Set the unique name in the grid for the column. This option 
+    must be set.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="167"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">index</span></font></div>
+    </td>
+    <td valign="top"  width="407"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Set the index name when sorting. Passed as sidx 
+    parameter.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: the order of cell</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="167"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">width</span></font></div>
+    </td>
+    <td valign="top"  width="407"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: number</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Set the initial width of the column in pixels. </span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: 150 pixels</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="167"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">align</span></font></div>
+    </td>
+    <td valign="top"  width="407"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Defines the alignment of the cell in the Body layer, not in 
+    header cell. Possible values - left, center, right.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: left</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="167"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">key</span></font></div>
+    </td>
+    <td valign="top"  width="407"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: boolean</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">In case if there is no id from server this can be set as as id 
+    for the unique row id. Only one column can have this 
+    property. If there are more than one key the grid finds the 
+    first one and the second is ignored.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: false</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="167"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">hidden</span></font></div>
+    </td>
+    <td valign="top"  width="407"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: boolen</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Defines if this column is hidden at initialization.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value : false</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="167"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">resizable</span></font></div>
+    </td>
+    <td valign="top"  width="407"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: boolean</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Defines if the column can be risized</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: true</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="167"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">sortable</span></font></div>
+    </td>
+    <td valign="top"  width="407"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: boolean</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Defines is this can be sorted.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: true</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="167"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">xmlmap</span></font></div>
+    </td>
+    <td valign="top"  width="407"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Defines the xml mapping for the column in the incomming 
+    xml file. Use a CCS specification for this</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: none</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="167"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">jsonmap</span></font></div>
+    </td>
+    <td valign="top"  width="407"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Defines the json mapping for the column in the incomming 
+    json string. </span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: none</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="167"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">sorttype</span></font></div>
+    </td>
+    <td valign="top"  width="407"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Used when datatype is clientSide. Defines the type of the 
+    column for appropriate sorting. Possible values: </span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">int - for sorting integer</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">float - for sorting decimal numbers</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">date - for sorting date</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">text - for text sorting</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: text</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="167"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">datefmt</span></font></div>
+    </td>
+    <td valign="top"  width="407"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Only in combination with sorttype:date. Determines the 
+    expected date format for that column. Uses a PHP like date 
+    formatting. </span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: ISO Date - Y-m-d</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="167"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">editable</span></font></div>
+    </td>
+    <td valign="top"  width="407"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: boolean</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Defines if the field is editable. This option is used in inline 
+    and form modules.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: false</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="167"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">edittype</span></font></div>
+    </td>
+    <td valign="top"  width="407"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Defines the edit type for inline and form editing</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Possible values: text, textarea, select, checkbox</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">See Inline editing and form editing</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: text</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="167"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">editoptions</span></font></div>
+    </td>
+    <td valign="top"  width="407"  style="border: solid #010101 1px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Type: array</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Array of allowed options (attributes) for edittype option</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value: empty array</span></font></div>
+    </td></tr></table><div align="left">&nbsp;&nbsp;</div></body></html>
+
+</body></html>

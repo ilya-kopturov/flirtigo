@@ -1,0 +1,244 @@
+<?php
+/**
+ * This file implements the UI view for the general settings.
+ *
+ * This file is part of the evoCore framework - {@link http://evocore.net/}
+ * See also {@link http://sourceforge.net/projects/evocms/}.
+ *
+ * @copyright (c)2003-2011 by Francois Planque - {@link http://fplanque.com/}
+ *
+ * {@internal License choice
+ * - If you have received this file as part of a package, please find the license.txt file in
+ *   the same folder or the closest folder above for complete license terms.
+ * - If you have received this file individually (e-g: from http://evocms.cvs.sourceforge.net/)
+ *   then you must choose one of the following licenses before using the file:
+ *   - GNU General Public License 2 (GPL) - http://www.opensource.org/licenses/gpl-license.php
+ *   - Mozilla Public License 1.1 (MPL) - http://www.opensource.org/licenses/mozilla1.1.php
+ * }}
+ *
+ * {@internal Open Source relicensing agreement:
+ * }}
+ *
+ * @package admin
+ *
+ * {@internal Below is a list of authors who have contributed to design/coding of this file: }}
+ * @author fplanque: Francois PLANQUE.
+ * @author blueyed: Daniel HAHLER.
+ *
+ * @version $Id: _general.form.php,v 1.26 2011/09/04 22:13:20 fplanque Exp $
+ */
+if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.' );
+
+/**
+ * @var User
+ */
+global $current_User;
+/**
+ * @var GeneralSettings
+ */
+global $Settings;
+
+global $dispatcher;
+
+global $collections_Module;
+
+$Form = new Form( NULL, 'settings_checkchanges' );
+$Form->begin_form( 'fform', T_('General Settings'),
+	// enable all form elements on submit (so values get sent):
+	array( 'onsubmit'=>'var es=this.elements; for( var i=0; i < es.length; i++ ) { es[i].disabled=false; };' ) );
+
+$Form->add_crumb( 'globalsettings' );
+$Form->hidden( 'ctrl', 'settings' );
+$Form->hidden( 'action', 'update' );
+$Form->hidden( 'tab', 'general' );
+
+// --------------------------------------------
+
+if( isset($collections_Module) )
+{
+	$Form->begin_fieldset( T_('Display options').get_manual_link('display_options') );
+
+	$BlogCache = & get_BlogCache();
+
+		$Form->select_input_object( 'default_blog_ID', $Settings->get('default_blog_ID'), $BlogCache, T_('Default blog to display'), array(
+				'note' => T_('This blog will be displayed on index.php.').' <a href="'.$dispatcher.'?ctrl=collections&action=new">'.T_('Create new blog').' &raquo;</a>',
+				'allow_none' => true,
+				'class' => '',
+				'loop_object_method' => 'get_maxlen_name',
+				'onchange' => '' )  );
+
+	$Form->end_fieldset();
+}
+
+// --------------------------------------------
+
+$Form->begin_fieldset( T_('Timeouts') );
+
+	// fp>TODO: enhance UI with a general Form method for Days:Hours:Minutes:Seconds
+
+	$Form->duration_input( 'timeout_sessions', $Settings->get('timeout_sessions'), T_('Session timeout'), 'months', 'seconds', array( 'minutes_step' => 1, 'required'=>true ) );
+	// $Form->text_input( 'timeout_sessions', $Settings->get('timeout_sessions'), 9, T_('Session timeout'), T_('seconds. How long can a user stay inactive before automatic logout?'), array( 'required'=>true) );
+
+	// fp>TODO: It may make sense to have a different (smaller) timeout for sessions with no logged user.
+	// fp>This might reduce the size of the Sessions table. But this needs to be checked against the hit logging feature.
+
+	$Form->duration_input( 'reloadpage_timeout', (int)$Settings->get('reloadpage_timeout'), T_('Reload-page timeout'), 'minutes', 'seconds', array( 'minutes_step' => 1, 'required' => true ) );
+	// $Form->text_input( 'reloadpage_timeout', (int)$Settings->get('reloadpage_timeout'), 5,
+	// T_('Reload-page timeout'), T_('Time (in seconds) that must pass before a request to the same URI from the same IP and useragent is considered as a new hit.'), array( 'maxlength'=>5, 'required'=>true ) );
+
+	$Form->checkbox_input( 'smart_hit_count', $Settings->get( 'smart_hit_count' ), T_( 'Smart view counting' ), array( 'note' => T_( 'Check this to count post views only once per session and ignore reloads.' ) ) );
+
+$Form->end_fieldset();
+
+// --------------------------------------------
+
+$Form->begin_fieldset( T_('Caching') );
+
+	$Form->checkbox_input( 'general_cache_enabled', $Settings->get('general_cache_enabled'), T_('Enable general cache'), array( 'note'=>T_('Cache rendered pages that are not controlled by a skin. See Blog Settings for skin output caching.') ) );
+
+	$cache_note = '('.T_( 'See Blog Settings for existing' ).')';
+	$Form->checklist( array(
+			array( 'newblog_cache_enabled', 1, T_( 'Enable page cache for NEW blogs' ), $Settings->get('newblog_cache_enabled'), false, $cache_note ),
+			array( 'newblog_cache_enabled_widget', 1, T_( 'Enable widget cache for NEW blogs' ), $Settings->get('newblog_cache_enabled_widget'), false, $cache_note )
+			), 'new_blogs_cahe', T_( 'Enable for new blogs' ) );
+
+$Form->end_fieldset();
+
+// --------------------------------------------
+
+if( $current_User->check_perm( 'options', 'edit' ) )
+{
+	$Form->end_form( array( array( 'submit', 'submit', T_('Save !'), 'SaveButton' ),
+													array( 'reset', '', T_('Reset'), 'ResetButton' ) ) );
+}
+
+/*
+ * $Log: _general.form.php,v $
+ * Revision 1.26  2011/09/04 22:13:20  fplanque
+ * copyright 2011
+ *
+ * Revision 1.25  2011/09/04 21:32:17  fplanque
+ * minor MFB 4-1
+ *
+ * Revision 1.24  2011/08/12 08:29:00  efy-asimo
+ * Post view count - fix, and crazy view counting option
+ *
+ * Revision 1.23  2011/03/15 09:34:05  efy-asimo
+ * have checkboxes for enabling caching in new blogs
+ * refactorize cache create/enable/disable
+ *
+ * Revision 1.22  2010/06/24 07:03:11  efy-asimo
+ * move the cross posting options to the bottom of teh Features tab & fix error message after moving post
+ *
+ * Revision 1.21  2010/05/22 12:22:49  efy-asimo
+ * move $allow_cross_posting in the backoffice
+ *
+ * Revision 1.20  2010/03/01 07:52:51  efy-asimo
+ * Set manual links to lowercase
+ *
+ * Revision 1.19  2010/02/14 14:18:39  efy-asimo
+ * insert manual links
+ *
+ * Revision 1.18  2010/02/08 17:53:55  efy-yury
+ * copyright 2009 -> 2010
+ *
+ * Revision 1.17  2010/01/02 21:11:59  fplanque
+ * fat reduction / cleanup
+ *
+ * Revision 1.16  2009/10/28 09:39:52  efy-maxim
+ * position of arguments of duration_input function have been changed
+ *
+ * Revision 1.15  2009/10/27 13:27:50  efy-maxim
+ * 1. months and seconds fields in duration field
+ * 2. duration fields instead simple text fields
+ *
+ * Revision 1.14  2009/09/26 12:00:43  tblue246
+ * Minor/coding style
+ *
+ * Revision 1.13  2009/09/25 07:33:14  efy-cantor
+ * replace get_cache to get_*cache
+ *
+ * Revision 1.12  2009/09/16 05:35:48  efy-bogdan
+ * Require country checkbox added
+ *
+ * Revision 1.11  2009/09/15 22:33:20  efy-bogdan
+ * Require country checkbox added
+ *
+ * Revision 1.10  2009/09/15 09:20:49  efy-bogdan
+ * Moved the "email validation" and the "security options" blocks to the Users -> Registration tab
+ *
+ * Revision 1.9  2009/09/14 11:54:21  efy-bogdan
+ * Moved Default user permissions under a new tab
+ *
+ * Revision 1.8  2009/08/30 00:30:52  fplanque
+ * increased modularity
+ *
+ * Revision 1.7  2009/07/06 23:52:25  sam2kb
+ * Hardcoded "admin.php" replaced with $dispatcher
+ *
+ * Revision 1.6  2009/03/08 23:57:45  fplanque
+ * 2009
+ *
+ * Revision 1.5  2008/12/28 22:41:56  fplanque
+ * increase blog name max length to 255 chars
+ *
+ * Revision 1.4  2008/09/28 08:06:07  fplanque
+ * Refactoring / extended page level caching
+ *
+ * Revision 1.3  2008/01/21 09:35:34  fplanque
+ * (c) 2008
+ *
+ * Revision 1.2  2007/09/12 21:00:32  fplanque
+ * UI improvements
+ *
+ * Revision 1.1  2007/06/25 11:01:27  fplanque
+ * MODULES (refactored MVC)
+ *
+ * Revision 1.29  2007/04/26 00:11:12  fplanque
+ * (c) 2007
+ *
+ * Revision 1.28  2007/03/25 13:20:52  fplanque
+ * cleaned up blog base urls
+ * needs extensive testing...
+ *
+ * Revision 1.27  2007/03/24 20:41:16  fplanque
+ * Refactored a lot of the link junk.
+ * Made options blog specific.
+ * Some junk still needs to be cleaned out. Will do asap.
+ *
+ * Revision 1.26  2006/12/15 22:54:14  fplanque
+ * allow disabling of password hashing
+ *
+ * Revision 1.25  2006/12/11 00:32:26  fplanque
+ * allow_moving_chapters stting moved to UI
+ * chapters are now called categories in the UI
+ *
+ * Revision 1.24  2006/12/09 01:55:36  fplanque
+ * feel free to fill in some missing notes
+ * hint: "login" does not need a note! :P
+ *
+ * Revision 1.23  2006/12/07 00:55:52  fplanque
+ * reorganized some settings
+ *
+ * Revision 1.22  2006/12/06 22:30:08  fplanque
+ * Fixed this use case:
+ * Users cannot register themselves.
+ * Admin creates users that are validated by default. (they don't have to validate)
+ * Admin can invalidate a user. (his email, address actually)
+ *
+ * Revision 1.21  2006/12/04 19:41:11  fplanque
+ * Each blog can now have its own "archive mode" settings
+ *
+ * Revision 1.20  2006/12/04 18:16:51  fplanque
+ * Each blog can now have its own "number of page/days to display" settings
+ *
+ * Revision 1.19  2006/12/03 01:25:49  blueyed
+ * Use & instead of &amp; when it gets encoded for output
+ *
+ * Revision 1.18  2006/11/26 01:37:30  fplanque
+ * The URLs are meant to be translated!
+ *
+ * Revision 1.17  2006/11/24 18:27:26  blueyed
+ * Fixed link to b2evo CVS browsing interface in file docblocks
+ */
+?>

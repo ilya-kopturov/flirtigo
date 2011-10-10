@@ -1,0 +1,76 @@
+<html><head>
+   <title>Array Data</title>
+   <meta name="generator"  content="HelpMaker">
+   <meta name="keywords"  content="Welcome">
+   <link rel="stylesheet"  type="text/css"  href="hm.css"></head>
+<body bgcolor="#FFFCEA">
+
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="#C0C0C0">
+  <tr>
+    <td align="left">
+      <body><div align="left">&nbsp;&nbsp;</div></body></html>
+
+    </td>
+    <td align="right">
+      <font face="Arial"  size="2">
+        <a href="jsonstring.htm">Previous</a>&nbsp;<a href="WhatisjqGrid.htm">Top</a>&nbsp;<a href="height.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Instead that the primary goal of jqGrid is to represent data returned from request, I 
+have included a wide range of methods to manipulate data at client side - i.e. Array 
+data.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span><span style=" font-size:10pt">Related options in options array: <b>datataype</b><br>
+Related options in colModel: <b>sorttype, datefmt</b><br>
+Related methods : <b>getRowData, delRowData, setRowData, addRowData</b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">If we have defined a pager for grid with client side data, the buttons in pager are 
+automatically disabled. With other words the current release of grid does not support 
+client side paging.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">First we must instruct jqGrid that the data that will be present is at client side. This is 
+done with the option datatype. To use this we must set</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span><span style=" font-size:10pt"><b>datatype : &quot;clientSide&quot;</b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span><span style=" font-size:10pt">The other option that can be used is &quot;local&quot; i.e. <b>datatype: &quot;local&quot; </b><br>
+That are the same things.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Having this it is a good idea to set the sorttypes for the columns. If the sorttype<br>
+is not set the default sorttype is &quot;text&quot;. Let's consider our example in terms of array 
+data.<br><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">&lt;script&gt;<br>
+jQuery(document).ready(function(){ <br>
+    jQuery(&quot;#list&quot;).jqGrid({<br>
+        </span></font><font face="Bitstream Vera Sans"  color="#ff8c00"><span style=" font-size:10pt">datatype: 'clientSide',</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">        colNames:['Inv No','Date', 'Amount','Tax','Total','Notes'],<br>
+        colModel :[ <br>
+        {name:'invid',index:'invid', width:55, </span></font><font face="Bitstream Vera Sans"  color="#009ff4"><span style=" font-size:10pt">sorttype:'int'</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">}, <br>
+        {name:'invdate',index:'invdate', width:90, </span></font><font face="Bitstream Vera Sans"  color="#009ff4"><span style=" font-size:10pt">sorttype:'date'</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">, </span></font><font face="Bitstream Vera Sans"  color="#ff0b00"><span style=" font-size:10pt">datefmt:'Y-m-d'</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">}, <br>
+        {name:'amount',index:'amount', width:80, align:'right'</span></font><font face="Bitstream Vera Sans"  color="#009ff4"><span style=" font-size:10pt">,sorttype:'float'</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">}, <br>
+        {name:'tax',index:'tax', width:80, align:'right',</span></font><font face="Bitstream Vera Sans"  color="#009ff4"><span style=" font-size:10pt">sorttype:'float'</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">}, <br>
+        {name:'total',index:'total', width:80,align:'right',</span></font><font face="Bitstream Vera Sans"  color="#009ff4"><span style=" font-size:10pt">sorttype:'float'</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">}, <br>
+        {name:'note',index:'note', width:150, sortable:false} ],<br>
+        pager: jQuery('#pager'),<br>
+        rowNum:10,<br>
+        viewrecords: true,<br>
+        imgpath: 'themes/basic/images',<br>
+        caption: 'My first grid'<br>
+}); <br>
+}); <br>
+&lt;/script&gt;</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">You can see the new setting here: <b>datatype, sortype and datefmt.</b><br><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The possible values for the <b>sorttype</b> are:<br><b>int</b> - the data is interpreted as integer,<br><b>float</b> - the data is interpreted as decimal number<br><b>date</b> - the data is interpreted as data<br><b>text</b> - the data is interpreted as text</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">We need this information for the appropriate sorting of these types. Additionally for 
+the sorttype date we must known the format of the data that will be present in the 
+grid. The default format is a ISO format 'Y-m-d'. The description of the date format is 
+like a PHP way. For more information refer to php.net. </span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The limitation of date format is that the date can be represented only as numbers 
+and not as number and string. By example if the date is represented as '03-Mar-2008' the sorting will be not correct.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span><span style=" font-size:10pt">Let's add some data. This can be done with the method addRowData.<br>
+The parameters to this method are:</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b><br></b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>addRowData( rowid, data, position )</b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">where:<br><b>rowid </b>- this value will be set as the id of the row<br><b>data</b> - is the array of data in pair name:value, where the name is the name from 
+colModel.<br><b>position</b> - tells where to add the data - &quot;last&quot; add the data at last position, &quot;first&quot;  
+add the data as first row.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">&lt;script&gt;<br>
+...<br>
+myfirstrow = {<br>
+invid:&quot;1&quot;,<br>
+invdate:&quot;2007-10-01&quot;,<br>
+note:&quot;note&quot;,<br>
+amount:&quot;200.00&quot;,<br>
+tax:&quot;10.00&quot;,<br>
+total:&quot;210.00&quot;}</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">jQuery(&quot;list&quot;).addRowData(&quot;1&quot;, myfirstrow);<br>
+...<br>
+&lt;/script&gt;</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">with this line we have added our first row. It is important to note that the order of the 
+name can be in arbitrary way. More over we can set here only one pair name value 
+Like this.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">jQuery(&quot;list&quot;).addRowData(&quot;2&quot;, {amount:&quot;300.00&quot;});</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">with this line we have added second row with only one value in the amount column. </span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">To get data from the particular row we should use getRowData method:</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b><br></b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getRowData( rowid )</b>,<br><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">where <b>rowid</b> is the id for the row which values we will obtain</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">jQuery(&quot;list&quot;).getRowData(&quot;1&quot;);</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">will return array as pair name value - the result is</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">{invid:&quot;1&quot;,<br>
+invdate:&quot;2007-10-01&quot;,<br>
+note:&quot;note&quot;,<br>
+amount:&quot;200.00&quot;,<br>
+tax:&quot;10.00&quot;,<br>
+total:&quot;210.00&quot;}</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">To delete a row we should use<b> delRowData </b>method:</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b><br></b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>delRowData( rowid )</b><br><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">where<b> rowid</b> is the id of the row that can be deleted.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">jQuery(&quot;list&quot;).delRowData(&quot;2&quot;);</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">will delete the row with the id = 2.<br>
+The method return true if the deleting is successfull, false othervise</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">To change all or part of values to a given row we can use a setRowData method.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b><br></b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>setRowData( rowid, data )</b><br><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">where </span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>rowid</b> is the id of the row which values will be changed<br><b>data</b> is a array of data that contain the new values. The structure of array is in type<br>
+name:value.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">jQuery(&quot;list&quot;).setRowData( &quot;1&quot;, { tax:&quot;5&quot;, total:&quot;205&quot; })</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">will change the values tax and total of row with id = 1.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The method return true if update is successful,  otherwise false.</span></font></div><div align="left">&nbsp;&nbsp;</div></body></html>
+
+</body></html>

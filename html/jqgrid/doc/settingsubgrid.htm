@@ -1,0 +1,46 @@
+<html><head>
+   <title>Setting subgrid</title>
+   <meta name="generator"  content="HelpMaker">
+   <meta name="keywords"  content="Welcome">
+   <link rel="stylesheet"  type="text/css"  href="hm.css"></head>
+<body bgcolor="#FFFCEA">
+
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="#C0C0C0">
+  <tr>
+    <td align="left">
+      <body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Setting subgrid</span></font></div></body></html>
+
+    </td>
+    <td align="right">
+      <font face="Arial"  size="2">
+        <a href="colmodelapi.htm">Previous</a>&nbsp;<a href="WhatisjqGrid.htm">Top</a>&nbsp;<a href="subgridexample.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">When setting the subgrid&#160; a three option should be considered.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>subGrid</b> this boolean value enables or disables the subgrid. If the grid is enabled a 
+additional column at left side is added to the grid. This column contain a 'plus' image 
+which indicate that the user can click on it to expand the row. By default all rows are 
+collapsed.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Default value for this option is false. To enable a subgrid set it to true.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>subGridUrl</b> - this option points to file that from which we should get the data for the 
+subgrid. Additionally to this url a <b>id</b> is passed as parameter. The value is the id of the 
+row. If there is a need to pass additional&#160; parameters we can use a params option in 
+subGridModel (see below)</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>subGridModel&#160;</b> is a array in which we describes a column model for the subgrid 
+data. The syntax is</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">subGridModel : [</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">{ <b>name</b> : ['name_1','name_2',...,'name_n'], </span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>width</b> : [width_1,width_2,...,width_n] ,</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>params</b> : [param_1,...,param_n]}&#160; </span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">]</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">where </span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>name&#160;</b> is array that contain the labels of the columns of the subgrid.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>width</b> is array that contain the width of the column. This array should have the same 
+length as in name array.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>params</b> is array in which we can add a name from colModel to pass as additional 
+parameter to the subGridUrl.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Again whit these options we must pay attention to subgrid model.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The subgrid model is described in xmlReader and jsonReader.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>xmlReader</b> : {<br>
+root: &quot;rows&quot;,<br>
+row: &quot;row&quot;,<br>
+page: &quot;rows&gt;page&quot;,<br>
+total: &quot;rows&gt;total&quot;,<br>
+records : &quot;rows&gt;records&quot;,<br>
+repeatitems: true,<br>
+cell: &quot;cell&quot;,<br>
+id: &quot;[id]&quot;, <br><b>subgrid: {root:&quot;rows&quot;, row: &quot;row&quot;, repeatitems: true, cell:&quot;cell&quot;}</b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">}</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">for xml mapping.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>jsonReader</b> : {<br>
+root: &quot;rows&quot;,<br>
+page: &quot;page&quot;,<br>
+total: &quot;total&quot;,<br>
+records: &quot;records&quot;,<br>
+repeatitems: true,<br>
+cell: &quot;cell&quot;,<br>
+id: &quot;id&quot;,<br><b>subgrid: {root:&quot;rows&quot;, repeatitems: true, cell:&quot;cell&quot;}</b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">}</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The mapping rules are the same as these in the basic grid.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">For more information see </span></font><a href="xmlfile.htm"><font face="Bitstream Vera Sans"  color="#0000ff"><span style=" font-size:10pt"><u>xml file</u></span></font></a><font face="Bitstream Vera Sans"><span style=" font-size:10pt"> and </span></font><a href="json.htm"><font face="Bitstream Vera Sans"  color="#0000ff"><span style=" font-size:10pt"><u>JSON</u></span></font></a></div></body></html>
+
+</body></html>

@@ -1,0 +1,16 @@
+AuthUserFile /home/httpd/vhosts/flirtigo.com/data/.htpasswd
+AuthName MEMBERS
+AuthType Basic
+require valid-user
+#<IfModule mod_access.c>
+#    <Files *>
+#        Order Deny,Allow
+#        Deny From All
+#    </Files>
+#    <Files ~ "^\.ht">
+#        Order Deny,Allow
+#        Deny From All
+#    </Files>
+#</IfModule>
+
+

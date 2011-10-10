@@ -1,0 +1,53 @@
+<html><head>
+   <title>Release Notes</title>
+   <meta name="generator"  content="HelpMaker">
+   <meta name="keywords"  content="Welcome">
+   <link rel="stylesheet"  type="text/css"  href="hm.css"></head>
+<body bgcolor="#FFFCEA">
+
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="#C0C0C0">
+  <tr>
+    <td align="left">
+      <body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Release Notes</span></font></div></body></html>
+
+    </td>
+    <td align="right">
+      <font face="Arial"  size="2">
+        <a href="postingdata.htm">Previous</a>&nbsp;<a href="WhatisjqGrid.htm">Top</a>&nbsp;
+      </font>
+    </td>
+  </tr></table>
+<hr><body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:11pt"><b>version 3.1 (2008-04-05)</b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>Fixed Bugs</b></span></font></div><div align="left"  style="margin-left:6mm; margin-right:0mm; text-indent:-6mm; margin-top:0.00mm; margin-bottom:0.00mm;"><font face="Symbol"><span style=" font-size:10pt">·&#160;&#160; &#160;&#160;&#160;</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">grid width bug when hidden fields are set and width of 
+grid too.</span></font></div><div align="left"  style="margin-left:6mm; margin-right:0mm; text-indent:-6mm; margin-top:0.00mm; margin-bottom:0.00mm;"><font face="Symbol"><span style=" font-size:10pt">·&#160;&#160; &#160;&#160;&#160;</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">fixed bug in setSortName method.</span></font></div><div align="left"  style="margin-left:6mm; margin-right:0mm; text-indent:-6mm; margin-top:0.00mm; margin-bottom:0.00mm;"><font face="Symbol"><span style=" font-size:10pt">·&#160;&#160; &#160;&#160;&#160;</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">fixed bug in addRowData method when add at top of the 
+grid&#160; and grid has no 
+data.</span></font></div><div align="left"  style="margin-left:6mm; margin-right:0mm; text-indent:-6mm; margin-top:0.00mm; margin-bottom:0.00mm;"><font face="Symbol"><span style=" font-size:10pt">·&#160;&#160; &#160;&#160;&#160;</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">CSS bug when editing input type=text field in inline edit 
+module</span></font></div><div align="left"  style="margin-left:6mm; margin-right:0mm; text-indent:-6mm; margin-top:0.00mm; margin-bottom:0.00mm;"><font face="Symbol"><span style=" font-size:10pt">·&#160;&#160; &#160;&#160;&#160;</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">added missed functions in editGridRow method</span></font></div><div align="left"  style="margin-left:6mm; margin-right:0mm; text-indent:-6mm; margin-top:0.00mm; margin-bottom:0.00mm;"><font face="Symbol"><span style=" font-size:10pt">·&#160;&#160; &#160;&#160;&#160;</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">fixed bugs with events names in formedit module</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:11pt"><b>IMPORTANT NOTE: Refer to </b></span></font><a href="apimethods.htm"><font face="Bitstream Vera Sans"  color="#0000ff"><span style=" font-size:11pt"><b><u>API Methods</u></b></span></font></a><font face="Bitstream Vera Sans"><span style=" font-size:11pt"><b> 
+to see which methods will 
+be removed in the next release.</b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>Additions</b></span></font></div><div align="left"  style="margin-left:6mm; margin-right:0mm; text-indent:-6mm; margin-top:0.00mm; margin-bottom:0.00mm;"><font face="Symbol"><span style=" font-size:10pt">·&#160;&#160; &#160;&#160;&#160;</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">added <b>getGridParam</b> method - this method requested 
+parameters from option 
+array of the grid. If the parameter is empty - the entry options are get</span></font></div><div align="left"  style="margin-left:6mm; margin-right:0mm; text-indent:-6mm; margin-top:0.00mm; margin-bottom:0.00mm;"><font face="Symbol"><span style=" font-size:10pt">·&#160;&#160; &#160;&#160;&#160;</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">added <b>setGridParam</b> method - set a particular parameter. 
+Note - for some 
+parameters to take effect a trigger(&quot;reloadGrid&quot;) should be executed. <u>Note that 
+with this method we can override events like onSelectRow and etc.</u></span></font></div><div align="left"  style="margin-left:6mm; margin-right:0mm; text-indent:-6mm; margin-top:0.00mm; margin-bottom:0.00mm;"><font face="Symbol"><span style=" font-size:10pt">·&#160;&#160; &#160;&#160;&#160;</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">added <b>onPaging</b> event - this event fires after click 
+on page button and before 
+data population</span></font></div><div align="left"  style="margin-left:6mm; margin-right:0mm; text-indent:-6mm; margin-top:0.00mm; margin-bottom:0.00mm;"><font face="Symbol"><span style=" font-size:10pt">·&#160;&#160; &#160;&#160;&#160;</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">added <b>resetSelection</b> method - this method reset 
+(unselect) the selected row(s)</span></font></div><div align="left"  style="margin-left:6mm; margin-right:0mm; text-indent:-6mm; margin-top:0.00mm; margin-bottom:0.00mm;"><font face="Symbol"><span style=" font-size:10pt">·&#160;&#160; &#160;&#160;&#160;</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">added option <b>toolbar</b>&#160; add at bottom or at 
+top of the gridbody div element where 
+we can put custom html content.</span></font></div><div align="left"  style="margin-left:6mm; margin-right:0mm; text-indent:-6mm; margin-top:0.00mm; margin-bottom:0.00mm;"><font face="Symbol"><span style=" font-size:10pt">·&#160;&#160; &#160;&#160;&#160;</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">added option <b>userData</b> in options array.&#160; Whit 
+this we get user defined data from 
+the response and use it later. To use this an additional option <b>userdata</b> in 
+xmlReader and jsonReader is added. (thanks to Paul Tiseo). For more information 
+refer to </span></font><a href="xmlfile.htm"><font face="Bitstream Vera Sans"  color="#0000ff"><span style=" font-size:10pt"><u>xml file</u></span></font></a><font face="Bitstream Vera Sans"><span style=" font-size:10pt"> and </span></font><a href="json.htm"><font face="Bitstream Vera Sans"  color="#0000ff"><span style=" font-size:10pt"><u>JSON 
+Data</u></span></font></a><font face="Bitstream Vera Sans"><span style=" font-size:10pt"> </span></font></div><div align="left"  style="margin-left:6mm; margin-right:0mm; text-indent:-6mm; margin-top:0.00mm; margin-bottom:0.00mm;"><font face="Symbol"><span style=" font-size:10pt">·&#160;&#160; &#160;&#160;&#160;</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">added option <b>postData</b>. This array is passed directly 
+to the url options - ajax 
+request (thanks to Paul Tiseo). Refer to API Methods for manipulating postData 
+array.</span></font></div><div align="left"  style="margin-left:6mm; margin-right:0mm; text-indent:-6mm; margin-top:0.00mm; margin-bottom:0.00mm;"><font face="Symbol"><span style=" font-size:10pt">·&#160;&#160; &#160;&#160;&#160;</span></font><font face="Bitstream Vera Sans"><span style=" font-size:10pt">added scope for easy translation when the grid is used 
+multiple times in the 
+application. That mean that the translation strings can be called only once and 
+not every time when the grid is constructed. The scope is <b>$.jgrid.defaults</b> To 
+use this you need to simply do $.extend($.jgrid.defaults,{ recordtext: &quot;My record 
+text&quot;, loadtext: &quot;Process text&quot;,...}) only once. Note that we can override&#160; all other 
+parameters. There are other additions for form manipulation module - <b>$.jgrid.search</b> - for the search method, <b>$.jgrid.edit</b> - for editing and adding 
+method, <b>$.jgrid.del</b> - for deleting method, <b>$.jgrid.nav</b> - for the navigator .</span></font></div></body></html>
+
+</body></html>

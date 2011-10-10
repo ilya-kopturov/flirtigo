@@ -1,0 +1,100 @@
+<?php
+/**
+ * This file implements the file editing form.
+ *
+ * This file is part of the evoCore framework - {@link http://evocore.net/}
+ * See also {@link http://sourceforge.net/projects/evocms/}.
+ *
+ * @copyright (c)2003-2011 by Francois Planque - {@link http://fplanque.com/}
+ *
+ * {@internal License choice
+ * - If you have received this file as part of a package, please find the license.txt file in
+ *   the same folder or the closest folder above for complete license terms.
+ * - If you have received this file individually (e-g: from http://evocms.cvs.sourceforge.net/)
+ *   then you must choose one of the following licenses before using the file:
+ *   - GNU General Public License 2 (GPL) - http://www.opensource.org/licenses/gpl-license.php
+ *   - Mozilla Public License 1.1 (MPL) - http://www.opensource.org/licenses/mozilla1.1.php
+ * }}
+ *
+ * {@internal Open Source relicensing agreement:
+ * }}
+ *
+ * @package admin
+ *
+ * {@internal Below is a list of authors who have contributed to design/coding of this file: }}
+ * @author fplanque: Francois PLANQUE
+ *
+ * @version $Id: _file_edit.form.php,v 1.8 2011/09/04 22:13:16 fplanque Exp $
+ */
+if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.' );
+
+/**
+ * @var File
+ */
+global $edited_File;
+
+$Form = new Form( NULL, 'file_edit' );
+
+$Form->global_icon( T_('Cancel editing!'), 'close', regenerate_url('fm_mode') );
+
+$Form->begin_form( 'fform', T_('Editing:').' '.$edited_File->get_rdfs_rel_path() );
+	$Form->hidden_ctrl();
+	$Form->add_crumb( 'file' );
+	$Form->hidden( 'action', 'update_file' );
+	$Form->hiddens_by_key( get_memorized() );
+
+ 	$Form->switch_layout( 'none' );
+	echo '<div class="center">';
+
+	$Form->textarea_input( 'file_content', $edited_File->content, 25, '', array( 'class'=>'large', 'cols' => '80' ) );
+
+	$Form->buttons( array( array( 'submit', '', T_('Save!'), 'SaveButton' ),
+												array( 'reset', '', T_('Reset'), 'ResetButton' ) ) );
+
+	echo '</div>';
+ 	$Form->switch_layout( NULL );
+
+$Form->end_form();
+
+/*
+ * $Log: _file_edit.form.php,v $
+ * Revision 1.8  2011/09/04 22:13:16  fplanque
+ * copyright 2011
+ *
+ * Revision 1.7  2010/02/08 17:52:56  efy-yury
+ * copyright 2009 -> 2010
+ *
+ * Revision 1.6  2010/01/30 18:55:26  blueyed
+ * Fix "Assigning the return value of new by reference is deprecated" (PHP 5.3)
+ *
+ * Revision 1.5  2010/01/19 21:10:25  efy-yury
+ * update: crumbs
+ *
+ * Revision 1.4  2009/03/08 23:57:43  fplanque
+ * 2009
+ *
+ * Revision 1.3  2008/10/11 22:20:48  blueyed
+ * Fix edit and properties view in file browser. (edit_File has been renamed to edited_File)
+ *
+ * Revision 1.2  2008/01/21 09:35:29  fplanque
+ * (c) 2008
+ *
+ * Revision 1.1  2007/06/25 11:00:00  fplanque
+ * MODULES (refactored MVC)
+ *
+ * Revision 1.4  2007/04/26 00:11:10  fplanque
+ * (c) 2007
+ *
+ * Revision 1.3  2007/01/24 03:45:29  fplanque
+ * decrap / removed a lot of bloat...
+ *
+ * Revision 1.2  2007/01/24 02:35:42  fplanque
+ * refactoring
+ *
+ * Revision 1.1  2006/12/07 20:03:32  fplanque
+ * Woohoo! File editing... means all skin editing.
+ *
+ * Revision 1.5  2006/11/24 18:27:25  blueyed
+ * Fixed link to b2evo CVS browsing interface in file docblocks
+ */
+?>

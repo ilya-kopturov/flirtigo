@@ -1,0 +1,48 @@
+<html><head>
+   <title>Server side file</title>
+   <meta name="generator"  content="HelpMaker">
+   <meta name="keywords"  content="Welcome">
+   <link rel="stylesheet"  type="text/css"  href="hm.css"></head>
+<body bgcolor="#FFFCEA">
+
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="#C0C0C0">
+  <tr>
+    <td align="left">
+      <body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Server side manipulation file</span></font></div></body></html>
+
+    </td>
+    <td align="right">
+      <font face="Arial"  size="2">
+        <a href="thehtmlfile.htm">Previous</a>&nbsp;<a href="WhatisjqGrid.htm">Top</a>&nbsp;<a href="phpandmysql..htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">By default jqGrid expect 'xml' data to construct the grid. The default structure of this 
+data is:</span></font></div><div align="left"><font face="times new roman"><span style=" font-size:12pt"><br></span></font></div><div align="left"><font face="times new roman"><span style=" font-size:12pt">&lt;?xml version =&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;<br>
+&lt;rows&gt;<br>
+              &lt;page&gt; &lt;/page&gt;<br>
+              &lt;total&gt; &lt;/total&gt;<br>
+              &lt;records&gt; &lt;/records&gt;<br>
+              &lt;row id = &ldquo;unique_rowid&rdquo;&gt;<br>
+                            &lt;cell&gt; cellcontent &lt;/cell&gt;<br>
+                            &lt;cell&gt; &lt;![CDATA[&lt;font color=&rdquo;red&rdquo;&gt;cell&lt;/font&gt; content]]&gt; &lt;/cell&gt;<br>
+                            &hellip;<br>
+              &lt;/row&gt;<br>
+              &lt;row id = &ldquo;unique_rowid&rdquo;&gt;<br>
+                            &lt;cell&gt; cellcontent &lt;/cell&gt;<br>
+                            &lt;cell&gt; &lt;![CDATA[&lt;font color=&rdquo;red&rdquo;&gt;cell&lt;/font&gt; content]]&gt; &lt;/cell&gt;<br>
+                            &hellip;<br>
+              &lt;/row&gt;</span></font></div><div align="left"><font face="times new roman"><span style=" font-size:12pt">              &hellip;<br>
+&lt;/rows&gt;</span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The encoding attribute in xml can be changed according to the encoded information.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>&lt;rows&gt;</b> tag  is the root tag for the grid.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>&lt;page&gt;</b> in this tag we return the number of the requested page.<br><b>&lt;total&gt;</b> in this tag we return the total pages of the query.<br><b>&lt;records&gt;</b> in this tag we return the total records from the query.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>&lt;row&gt;</b> in this tag we define a particular row in the grid.<br><b>&lt;cell&gt;</b> in this tag is the actual data. Note that CDATA can be used. This way we can 
+add images, links and check boxes. It is important to note that in this case the 
+number of cell tags in the row tag should be equal to the number of cells in colModel. 
+In our example we define six columns - so the number of cell tags in row tag should 
+be equal to six.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">It is important to note the <b>id</b>  attribute in &lt;row&gt; tag. In Principe this attribute can be 
+omitted, but it is a good practice to have unique id of every row. If this attribute is 
+omitted the jqGrid set his own id based on the order of the row. Some people asked 
+me - haw to set the id without to view this id in the grid? The answer is simple. Do 
+not include the unique id in colModel, but when we construct the query for the data 
+we should include the unique id in the query and set them in the id attribute and not 
+in the cell tag.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Now it is time to construct our file. </span></font></div><div align="left">&nbsp;&nbsp;</div></body></html>
+
+</body></html>

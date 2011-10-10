@@ -1,0 +1,45 @@
+<html><head>
+   <title>Data Types</title>
+   <meta name="generator"  content="HelpMaker">
+   <meta name="keywords"  content="Welcome">
+   <link rel="stylesheet"  type="text/css"  href="hm.css"></head>
+<body bgcolor="#FFFCEA">
+
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="#C0C0C0">
+  <tr>
+    <td align="left">
+      <body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Data Types</span></font></div></body></html>
+
+    </td>
+    <td align="right">
+      <font face="Arial"  size="2">
+        <a href="coopexample.htm">Previous</a>&nbsp;<a href="WhatisjqGrid.htm">Top</a>&nbsp;<a href="xmlfile.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">When the first release of jqGrid was available the only possible way to obtain data 
+was a xml way described in the example in Chapter 3.  Later many people request a 
+JSON way, then Array data  and at end data with 'real' names. After lot of work and 
+help of the community we have a wide range of obtaining data. </span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">The related options (in options array) for manipulating different types of data are:</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>datatype:</b> the possible options are - 'xml', 'json','clientSide' or 'local', 'xmlstring', 
+'jsonstring'</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>xmlReader</b> : {<br>
+            root: &quot;rows&quot;,<br>
+            row: &quot;row&quot;,<br>
+            page: &quot;rows&gt;page&quot;,<br>
+            total: &quot;rows&gt;total&quot;,<br>
+            records : &quot;rows&gt;records&quot;,<br>
+            repeatitems: true,<br>
+            cell: &quot;cell&quot;,<br>
+            id: &quot;[id]&quot;, <br>
+            subgrid: {root:&quot;rows&quot;, row: &quot;row&quot;, repeatitems: true, cell:&quot;cell&quot;}</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">};</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">for xml data mapping</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b><br></b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>jsonReader</b> : {<br>
+            root: &quot;rows&quot;,<br>
+            page: &quot;page&quot;,<br>
+            total: &quot;total&quot;,<br>
+            records: &quot;records&quot;,<br>
+            repeatitems: true,<br>
+            cell: &quot;cell&quot;,<br>
+            id: &quot;id&quot;,<br>
+            subgrid: {root:&quot;rows&quot;, repeatitems: true, cell:&quot;cell&quot;}<br>
+}</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">for json mapping</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">In <b>colModel</b> the related options are <b>xmlmap</b> for description of xml field, and <b>jsonmap</b> for description of json field.  Example:</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">colModel : [ {name:'amaunt',..., xmlmap:'amt'...}...] will search in xml for  'amt' tag 
+in the resulting xml when the repeatitems option is set to false.</span></font></div><div align="left">&nbsp;&nbsp;</div></body></html>
+
+</body></html>

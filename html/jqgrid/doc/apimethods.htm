@@ -1,0 +1,343 @@
+<html><head>
+   <title>API Methods</title>
+   <meta name="generator"  content="HelpMaker">
+   <meta name="keywords"  content="Welcome">
+   <link rel="stylesheet"  type="text/css"  href="hm.css"></head>
+<body bgcolor="#FFFCEA">
+
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="#C0C0C0">
+  <tr>
+    <td align="left">
+      <body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">API Methods</span></font></div></body></html>
+
+    </td>
+    <td align="right">
+      <font face="Arial"  size="2">
+        <a href="options.htm">Previous</a>&nbsp;<a href="WhatisjqGrid.htm">Top</a>&nbsp;<a href="colmodelapi.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><body><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>Calling conventions:</b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b><br></b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>jQuery(&quot;#table_id&quot;).jqGridMethod( parameter1,...parameterN )</b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Where</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>table_id</b> is the id of the already constructed jqGrid.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>jqGridMethod</b> is a method applied to this jqGrid.</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>parameter1,...parameterN</b> - a list of parameters</span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:11pt"><b>IMPORTANT NOTE: The colored methods will be removed in the next 
+release. Instead you can use setGridParam and getGirdParam 
+methods. Read the replacement below for every method.&#160; </b></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Below is a list of available methods</span></font></div><div align="left">&nbsp;&nbsp;</div><table width="576"  cellpadding="4"  cellspacing="0"  style="border-collapse: collapse; border: none">
+    <tr>
+    <td valign="top"  width="185"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>Method</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>Description</b></span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getGridParam</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters: </span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">name - string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This method return the value of the requested 
+    parameter. The name is the name from options array. 
+    For a particular name see </span></font><a href="options.htm"><font face="Bitstream Vera Sans"  color="#0000ff"><span style=" font-size:10pt"><u>Options</u></span></font></a><font face="Bitstream Vera Sans"><span style=" font-size:10pt">. If the name is not set 
+    the entry options are returned.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>setGridParam</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>object - array</b></span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">set a particular parameter. Note - for some parameters 
+    to take effect a trigger(&quot;reloadGrid&quot;) should be 
+    executed. <u>Note that with this method we can override 
+    events like onSelectRow and etc.&#160;</u> Example: </span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><br>
+    </span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">setGridParam({</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">url:&quot;newurl&quot;,</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">page:1,</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">onSelectRow:function(id){/*here is the new code*/}</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">});</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getUrl</b></span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getGridParam(&quot;url&quot;)</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters: none</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Return the current url from options array</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getSortName</b></span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getGridParam(&quot;sortname&quot;)</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters: none</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Return the name of last sorted column</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getSortOrder</b></span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getGridParam(&quot;sortorder&quot;)</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters: none</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Return the last sorted order</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getSelectedRow</b></span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getGridParam(&quot;selrow&quot;)</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters: none</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Return the id of the selected row, null if row is not 
+    selected</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getPage</b></span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getGridParam(&quot;page&quot;)</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters: none</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Return the current page number.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getRowNum</b></span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getGridParam(&quot;rowNum&quot;)</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters: none</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Return the current number of requested rows</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getDataType</b></span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getGridParam(&quot;datatype&quot;)</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters: none</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Return the current datatype.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getRecords</b></span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getGridParam(&quot;records&quot;)</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters: none</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Return the current number of records in grid.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getDataIDs</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters: none</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Returns: array</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Return array of the id's in the current grid view. Empty 
+    array if no data is available.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getMultiRow</b></span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getGridParam(&quot;selarrrow&quot;)</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters: none</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Returns: array</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Return array of id's of the selected rows when 
+    multiselect options is true. Empty array if not selection.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>setUrl</b></span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>setGridParam({url:newvalue})</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">url - string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Set a new url, replacing the older.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>setSortName</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">sortname - string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Set a new sort name</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>setSortOrder</b></span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>setGridParam({sortname:newvalue})</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">sortorder - string (asc or desc)</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Set a new sort order</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>setPage</b></span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>setGridParam({page:newvalue})</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">page - integer &gt;0</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Set a new page number</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>setRowNum</b></span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>setGridParam({rowNum:newvalue})</b></span></font></div>
+    <div align="left">&nbsp;</div>
+    </td>
+    <td valign="top"  width="391"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">rownum - integer &gt; 0</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Swwwet a new number of requested rows.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>setDataType</b></span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>setGridParam({datatype:newvalue})</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  bgcolor="#ffff80"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">datatype - string (xml,json.xmlstring,jsonstring, 
+    clientSide)</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Set a new datatype.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>setSelection</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">rowid - string </span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Toggle a selection of the row with id = rowid</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>resetSelection</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters: none</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Reset (unselect) the selected row(s). Also works in 
+    multiselect mode.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>getRowData</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">rowid - string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Return - array</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Return array with data of the requested id = rowid. The 
+    returned array is of type name:value, where the name is 
+    a name from colModel and the value is a actual value.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Return empty array if the row can not be found.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>delRowData</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">rowid - string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Return - boolean</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Deletes row with the id = rowid. Return true is the 
+    operation success, otherwise false. This operation does 
+    not delete a data from the server.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>setRowData</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">rowid - string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">data - array</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Return: boolean</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Updates the values (using data array) in the row with 
+    the given rowid. The syntax of data array is: 
+    {name1:value1,name2: value2&hellip;} where the name is 
+    the name of the column as described in the colModel 
+    and the value is the new value. Return true on success, 
+    false otherwise. </span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>addRowData</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">rowid - string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">data - array</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">position - string (first, last) - default last</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Insert new row with id <b>rowid</b> at the <b>position</b>  using 
+    data array.The syntax of data array is: 
+    {name1:value1,name2: value2&hellip;} where the name is 
+    the name of the column as described in the colModel 
+    and the value is the value. Return true on success, false 
+    otherwise</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>hideCol</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">colname - string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Hide a column with a given colname. The colname must 
+    be a valid name from colModel. The width of the grid 
+    does not change.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>showCol</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameter:</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">colname - string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Show a column with a given colname. The colname must 
+    be a valid name from colModel. The width of the grid 
+    does not change. </span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>setCaption</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameters</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">caption - string</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Set a new caption of the grid. If the Caption layer was 
+    hidden it is shown.</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt"><b>.trigger(&quot;reloadGrid&quot;);</b></span></font></div>
+    </td>
+    <td valign="top"  width="391"  style="border: solid #010101 0px;">
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">Parameter: none</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This reload the grid with the current settings. This mean 
+    that a new request is send to the server if datatype is 
+    xml or json.</span></font></div>
+    <div align="left"><font face="Bitstream Vera Sans"><span style=" font-size:10pt">This method should be applied to already constructed 
+    grid - i.e. jQuery(&quot;#mytable_id&quot;).trigger(&quot;reloadGrid&quot;);</span></font></div>
+    </td></tr>
+    <tr>
+    <td valign="top"  width="185"  style="border: solid #010101 0px;">
+    <div align="left"><span style="font-size: 10pt;">&nbsp;</span></div>
+    </td>
+    <td valign="top"  width="391"  style="border: solid #010101 0px;">
+    <div align="left"><span style="font-size: 10pt;">&nbsp;</span></div>
+    </td></tr></table><div align="left">&nbsp;&nbsp;</div></body></html>
+
+</body></html>

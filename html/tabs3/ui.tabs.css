@@ -1,0 +1,133 @@
+/* Caution! Ensure accessibility in print and other media types... */
+@media projection , screen {
+	/* Use class for showing/hiding tab content, so that visibility can be better controlled in different media types... */
+	.ui-tabs-hide {
+		display: none;
+	}
+}
+.tabs_bd li {margin: 0 1px 0 0; float: left;}
+.tabs_bd span, .tabs_bd a {padding-bottom: 0 ! important; height: 17px ! important; min-height: 17px ! important;}
+
+/* Hide useless elements in print layouts... */
+@media print {
+	.ui-tabs-nav {
+		display: none;
+	}
+}
+
+/* Skin */
+.ui-tabs-nav,.ui-tabs-panel {
+	font-family: "Trebuchet MS", Trebuchet, Verdana, Helvetica, Arial,
+		sans-serif;
+	font-size: 12px;
+}
+
+.ui-tabs-nav {
+	list-style: none;
+	margin: 2px;
+	padding: 2px 2px 2px 4px;
+}
+
+.ui-tabs-nav:after {
+	/* clearing without presentational markup, IE gets extra treatment */
+	display: block;
+	clear: both;
+	content: " ";
+}
+
+.ui-tabs-nav li, .tabs_bd li {
+	float: left;
+	margin: 0 0 0 1px;
+	min-width: 16px; /* be nice to Opera */
+}
+
+.ui-tabs-nav a,.ui-tabs-nav a span, .tabs_bd span {
+	display: block;
+	padding: 2px 10px ! important;
+/*	border: 1px solid #000; */
+	border-bottom: none;
+	float: left;
+	_padding: 2px 9px;
+}
+
+.ui-tabs-nav .ui-tabs-selected a,.tabs_bd span.curr, .tabs_bd span:hover, .ui-tabs-nav a:hover, .ui-tabs-nav span:hover {
+	background-color: #F0ECEC ! important;
+}
+
+.ui-tabs-nav a, .tabs_bd span {
+	background-color: #C8C3C3;
+}
+.ui-tabs-nav a span {border: none ! important; padding: 0 ! important; margin: 0 ! important;}
+
+.ui-tabs-nav a,.tabs_bd span,.tabs_bd a {
+	margin: 1px 0 0;
+	/* position: relative makes opacity fail for disabled tab in IE */
+	/* color: #27537a; */
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap; /* required in IE 6 */
+	outline: 0; /* prevent dotted border in Firefox */
+}
+
+.ui-tabs-nav .ui-tabs-selected a,.tabs_bd span.curr {
+	position: relative;
+	top: 1px;
+	z-index: 2;
+	margin-top: 0;
+	color: #000;
+}
+
+.ui-tabs-nav a span, .tabs_bd span {
+	width: 16px; /* IE 6 treats width as min-width */
+	min-width: 16px;
+	height: 20px;
+	min-height: 20px;
+}
+
+*>.ui-tabs-nav a span, .tabs_bd span { /* hide from IE 6 */
+	width: auto;
+	height: auto;
+}
+
+.ui-tabs-nav .ui-tabs-selected a span, .tabs_bd span.curr {
+	padding-bottom: 1px;
+}
+
+.ui-tabs-nav .ui-tabs-selected a:link,.ui-tabs-nav .ui-tabs-selected a:visited,.ui-tabs-nav .ui-tabs-disabled a:link,.ui-tabs-nav .ui-tabs-disabled a:visited
+	{ /* @ Opera, use pseudo classes otherwise it confuses cursor... */
+	cursor: text;
+}
+
+.ui-tabs-nav a:hover,.ui-tabs-nav a:focus,.ui-tabs-nav a:active,.ui-tabs-nav .ui-tabs-unselect a:hover,.ui-tabs-nav .ui-tabs-unselect a:focus,.ui-tabs-nav .ui-tabs-unselect a:active
+	{ /* @ Opera, we need to be explicit again here now... */
+	cursor: pointer;
+}
+
+.ui-tabs-disabled {
+	opacity: .4;
+	filter: alpha(opacity = 40);
+}
+
+.ui-tabs-panel {
+/*	border-top: 1px solid #bfbdbd; */
+	padding: 1em 8px;
+	background: #fff;
+	float: left;
+	/* declare background color for container to avoid distorted fonts in IE while fading */
+}
+
+.ui-tabs-loading em {
+	padding: 0 0 0 20px;
+	background: url(loading.gif) no-repeat 0 50%;
+}
+
+/* Additional IE specific bug fixes... */
+* html .ui-tabs-nav { /* auto clear, @ IE 6 & IE 7 Quirks Mode */
+	display: inline-block;
+}
+
+*:first-child+html .ui-tabs-nav {
+	/* @ IE 7 Standards Mode - do not group selectors, otherwise IE 6 will ignore complete rule (because of the unknown + combinator)... */
+	display: inline-block;
+}

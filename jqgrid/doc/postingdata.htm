@@ -1,0 +1,28 @@
+<html><head>
+   <title>Posting Data</title>
+   <meta name="generator"  content="HelpMaker">
+   <meta name="keywords"  content="Welcome">
+   <link rel="stylesheet"  type="text/css"  href="hm.css"></head>
+<body bgcolor="#FFFCEA">
+
+<table width="100%"  border="0"  cellspacing="0"  cellpadding="2"  bgcolor="#C0C0C0">
+  <tr>
+    <td align="left">
+      <body><div align="left"><font face="Arial"><span style=" font-size:10pt">Posting Data</span></font></div></body></html>
+
+    </td>
+    <td align="right">
+      <font face="Arial"  size="2">
+        <a href="deleterow.htm">Previous</a>&nbsp;<a href="WhatisjqGrid.htm">Top</a>&nbsp;<a href="releasenotes.htm">Next</a>
+      </font>
+    </td>
+  </tr></table>
+<hr><body><div align="left"><font face="Arial"><span style=" font-size:10pt">This is original idea and implementation from Paul Tiseo.</span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><b><br></b></span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><b>Module name</b>: grid.postext.js</span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><b><br></b></span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><b>Description</b>: The main purpose of this module is to manipulate the parameters to url via array 
+and get a user defined data from the response. For user defined data please refer to Data Types.</span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><b>Installation</b>: To enable this module you should enable it in jquery.jqGrid.js.</span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt">Manipulating parameters:</span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt">In the option array of the grid is added new option <b>postData</b>. By default this is empty array.</span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt">The values of this array are added via $.extend to the ajax request. To manipulate the values of 
+the array we can use these methods:</span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><b>$(&quot;#mygrid&quot;).getPostData()</b> return all parameters passed to the grid url. The returned value is 
+array of type name:value.</span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><b>$(&quot;#mygrid&quot;).setPostData( newdata)&#160;</b> set a new set of parameters overriding the existing ones. </span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><b>newdata</b> should be array of type name:value. Example {myparam:&quot;myvalue&quot;}</span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt">Note that the page, rowNum, sortorder, sortname parameters are not changed. To change these 
+use setGridParam method.</span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><b>$(&quot;#mygrid&quot;).appendPostData( newdata)</b> replace or append new parameters to the array. <b>newdata</b> should be array of type name;value</span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><b>$(&quot;#mygrid&quot;).setPostDataItem( Key, Val)</b> set new or replace the value of the existing item in the 
+array. Key is the name and Val is the value of the item.</span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><b>$(&quot;#mygrid&quot;).getPostDataItem( key)&#160;</b> return the value of the requested item with name <b>key</b></span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><br></span></font></div><div align="left"><font face="Arial"><span style=" font-size:10pt"><b>$(&quot;#mygrid&quot;).removePostDataItem( key)</b> deletes a specified item with name = key from the 
+array.</span></font></div></body></html>
+
+</body></html>
