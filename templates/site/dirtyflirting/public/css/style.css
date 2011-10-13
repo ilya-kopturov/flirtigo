@@ -78,7 +78,21 @@ img {
 	margin-top: 5px;
 	margin: 0px 0px 0px 0px;
 }
-
+#pub_header .fb_login_button {
+	width: 66px;
+	height: 22px;
+	float: left;
+	margin: 58px 0px 0px 170px;
+}
+#pub_header .fb_login_button a {
+	display: block;
+	background: url("/templates/site/dirtyflirting/login/images/fb_login_button.png") 0 0 no-repeat;
+	width: 66px;
+	height: 22px;
+}
+#pub_header .fb_login_button a:hover {
+	text-decoration: none;
+}
 #whos_inside_block1 {
 	float: left;
 	width: 100%;

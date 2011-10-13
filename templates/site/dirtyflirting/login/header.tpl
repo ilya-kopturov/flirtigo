@@ -41,7 +41,7 @@
        	<a href="{$cfg.path.url_site}{if $smarty.session.sess_id}mem_{/if}index.php"/><img src="{$cfg.template.url_template}login/images/hornybook_header.gif" border="0"></a>
        </td>
        <td style="vertical-align: bottom; text-align: right;" class="logout">
-         [<!-- <i>{$smarty.session.sess_screenname}</i> |  --><a href="{$cfg.path.url_site}mem_logout.php" class="logout">Logout</a>]
+         [<!-- <i>{$smarty.session.sess_screenname}</i> |  --><a href="{$logout_url}" class="logout">Logout</a>]
        </td>
      </tr>
    </table>

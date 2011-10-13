@@ -49,7 +49,12 @@
 <div class="center" id="pub_header">
     <form method="post" action="/login.php">
 	<div class="logo_container2">
-		<a href="/{if $smarty.session.sess_id}mem_{/if}index.php"/><img src="/templates/site/dirtyflirting/login/images/hornybook_header.gif" alt="FlirtiGo.com" /></a>
+		<a href="/{if $smarty.session.sess_id}mem_{/if}index.php"><img src="/templates/site/dirtyflirting/login/images/hornybook_header.gif" alt="FlirtiGo.com" /></a>
+	</div>
+	<div class="fb_login_button">
+		{if $user_id == 0}
+			<a href="{$url}" class="a_fb_login">&nbsp;</a>
+		{/if}
 	</div>
 	<div class="login_container">
 		<div class="input_container">

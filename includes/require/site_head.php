@@ -13,11 +13,17 @@ header("Expires: Mon, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 if (!defined('IN_MAINSITE')) die("Critical Error!");
 
-error_reporting(E_ALL & ~E_NOTICE);
-// set_magic_quotes_runtime(0);
-// ini_set("magic_quotes_gpc", '0');
+//error_reporting(E_ALL & ~E_NOTICE);
+//set_magic_quotes_runtime(0);
+//ini_set("magic_quotes_gpc", '0');
+
+//ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+
 
 include_once realpath(dirname(__FILE__) . '/../config') . '/common.php';		// fphp
+
+
 
 include_once(PATH_INCLUDES . 'Zend/Loader.php');
 spl_autoload_register('Zend_Loader::autoload');
@@ -43,6 +49,7 @@ include_once(PATH_INCLUDES . "config/option.php");
 include_once(PATH_INCLUDES . "config/profile.php");
 include_once(PATH_INCLUDES . "config/template.php");
 include_once(PATH_INCLUDES . "config/countries.php");
+include_once(PATH_INCLUDES . "config/facebook.php");
 
 include_once(PATH_INCLUDES . "function/general.php");
 include_once(PATH_INCLUDES . "function/image.php");
@@ -53,6 +60,7 @@ include_once(PATH_INCLUDES . "function/profile.php");
 include_once(PATH_INCLUDES . "function/mailer.php");
 include_once(PATH_INCLUDES . "function/member.php");
 include_once(PATH_INCLUDES . "function/search.php");
+include_once(PATH_INCLUDES . "function/facebook_func.php");
 
 include_once(PATH_INCLUDES . "class/image.php");
 include_once(PATH_INCLUDES . "class/db.php");

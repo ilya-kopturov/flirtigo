@@ -6,26 +6,30 @@ function check_session($db, $check_password, $check_username, $check_access = 0)
 {
 	global $cfg;
 
-    if(!$db->get_var("SELECT `id` FROM `tblUsers` WHERE `screenname` = '".$check_username."' AND `pass` = '".$check_password."' AND `disabled` = 'N'"))
+	$site_login_check = $db->get_var("SELECT `id` FROM `tblUsers` WHERE `screenname` = '".$check_username."' AND `pass` = '".$check_password."' AND `disabled` = 'N'");
+	
+    if(!($site_login_check OR $fb_user_id))
     {
         $_SESSION = array();
     	session_destroy();
 
-    	if (strcmp($_SERVER['HTTP_X_REQUESTED_WITH'], 'XMLHttpRequest') == 0) die("You need to <a href='{$cfg['path']['url_site']}'>login</a> to use this function or <a href='{$cfg['path']['url_site']}join.php'>join</a> now.");
+    	if (strcmp($_SERVER['HTTP_X_REQUESTED_WITH'], 'XMLHttpRequest') == 0) { 
+    		die("You need to <a href='{$cfg['path']['url_site']}'>login</a> to use this function or <a href='{$cfg['path']['url_site']}join.php'>join</a> now.");
+    	}
+
     	header("Location: " . $cfg['path']['url_site'] . "?error=Your session has expired. Please login again.");
     	exit;
     }
     else
     {
-
     	if ($check_access && !LiveUser::isAllowed($check_access))
     	{
-
-if ($_SESSION['sess_id']==5173084) { syslog(LOG_INFO, var_export($_SESSION['sess_id'],true)); 
- syslog(LOG_INFO,var_export($_SERVER['REQUEST_URI'],true)); 
-syslog(LOG_INFO,var_export($check_access,true));
-syslog(LOG_INFO,var_export($_SESSION['sess_accesslevel'],true));
-				} 
+			if ($_SESSION['sess_id']==5173084) { 
+				syslog(LOG_INFO, var_export($_SESSION['sess_id'],true)); 
+				syslog(LOG_INFO,var_export($_SERVER['REQUEST_URI'],true)); 
+				syslog(LOG_INFO,var_export($check_access,true));
+				syslog(LOG_INFO,var_export($_SESSION['sess_accesslevel'],true));
+			} 
 
     		/*if((int) $check_access == 2 AND (int) $_SESSION['sess_accesslevel'] == 1){
     	    	header("Location: " . $cfg['path']['url_upgrade'] . "index2.php?id=" . $_SESSION['sess_id']);
