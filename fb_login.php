@@ -21,7 +21,7 @@ if($fb_data) {
 }
 if(is_array($row)) {
 	// this FB id is exist. Redirect to start page
-	header("Location: " . $cfg['path']['url_site'] . 'mem_index.php');
+	header("Location: " . $cfg['path']['url_site'] . 'login.php');
 	// TODO: save log if needed
 } else {
 	// this FB id is exist - this is first time log in. Add record to db
@@ -60,5 +60,5 @@ if(is_array($row)) {
 		VALUES('$fb_user_id', $id, '$name', '$first_name', '$last_name', '$username', '$birthday', '$email', '$gender', '$link', '$location', $timezone, $verified, '$locale', '$time_now', '$updated_time');
 	");
 	// Redirect to start page
-	header("Location: " . $cfg['path']['url_site'] . 'mem_index.php');
+	header("Location: " . $cfg['path']['url_site'] . 'join.php');
 }

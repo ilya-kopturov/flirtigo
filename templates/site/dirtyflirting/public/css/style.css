@@ -93,11 +93,19 @@ img {
 #pub_header .fb_login_button a:hover {
 	text-decoration: none;
 }
+
 #whos_inside_block1 {
 	float: left;
 	width: 100%;
 }
-
+#pub_header .logout_container {
+	float: right;
+	width: 240px;
+	height: 22px;
+	margin: 66px 0px 0px 0px;
+	text-align: right;
+	font: 14px 'Trebuchet MS',Trebuchet,Verdana,Helvetica,Arial,sans-serif;
+}
 #whos_inside_block2 {
 	float: left;
 	width: 100%;

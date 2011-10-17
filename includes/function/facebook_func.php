@@ -1,6 +1,6 @@
 <?php
 
-require_once ("./includes/" . "require" . "/" . "Facebook/facebook.php");
+require_once ($cfg['path']['dir_include']."require" . "/" . "Facebook/facebook.php");
 $facebook = new Facebook(array(
 	'appId'  => $cfg['facebook']['app_id'],
 	'secret' => $cfg['facebook']['app_secret'],
@@ -10,6 +10,7 @@ $facebook = new Facebook(array(
 $fb_user_id = null;
 $fb_auth_url = null;
 $fb_me = null;
+//$fb_no_join = null;
 // Get User ID
 $fb_user_id = $facebook->getUser();
 

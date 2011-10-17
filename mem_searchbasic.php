@@ -9,9 +9,8 @@ define("IN_MAINSITE", TRUE);
 
 include ("./includes/" . "require" . "/" . "site_head.php");
 
-if(!$fb_user_id) {
-	check_session($db, $_SESSION['sess_pass'], $_SESSION['sess_screenname'], 0);
-}
+check_session($db, $_SESSION['sess_pass'], $_SESSION['sess_screenname'], 0);
+
 /* ... sql ... */
 
 

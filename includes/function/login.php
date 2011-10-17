@@ -5,8 +5,13 @@
 function check_session($db, $check_password, $check_username, $check_access = 0)
 {
 	global $cfg;
-
-	$site_login_check = $db->get_var("SELECT `id` FROM `tblUsers` WHERE `screenname` = '".$check_username."' AND `pass` = '".$check_password."' AND `disabled` = 'N'");
+	global $fb_user_id;
+	if($check_username === null OR $check_password === null) {
+		$site_login_check = null;
+	} else {
+		$sql = "SELECT `id` FROM `tblUsers` WHERE `screenname` = '".$check_username."' AND `pass` = '".$check_password."' AND `disabled` = 'N'";
+		$site_login_check = $db->get_var($sql);
+	}
 	
     if(!($site_login_check OR $fb_user_id))
     {
@@ -22,6 +27,10 @@ function check_session($db, $check_password, $check_username, $check_access = 0)
     }
     else
     {
+    	if ($fb_user_id && $check_username === null) { // here user logged in via FB but not complete join (not have screenname and pass)
+    		// Redirect to join
+    		header("Location: " . $cfg['path']['url_site'] . 'join.php');
+    	}
     	if ($check_access && !LiveUser::isAllowed($check_access))
     	{
 			if ($_SESSION['sess_id']==5173084) { 

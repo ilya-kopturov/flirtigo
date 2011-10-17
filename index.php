@@ -5,11 +5,6 @@ define("IN_MAINSITE", TRUE);
 
 include ("./includes/" . "require" . "/" . "site_head.php");
 
-/* FB vars init */
-$smarty->assign("url", $fb_auth_url);
-$smarty->assign('user_id', $fb_user_id);
-/* End FB vars init */
-
 /* ... featured faces ... */
 $featured = @$db->get_results("SELECT u.`id`, u.`screenname`, u.`country`, u.`city`, u.`typeloc`, u.`typeusr`, 
                                       u.`joined`, u.`birthdate`

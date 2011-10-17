@@ -9,8 +9,8 @@
 
 //include_once('/usr/share/pear/MDB2.php');
 //include_once('/usr/share/pear/MDB2/Driver/mysql.php');
-include_once('pear/MDB2.php');
-include_once('MDB2/Driver/mysql.php');
+include_once($cfg['path']['dir_site'].'pear/MDB2.php');
+include_once($cfg['path']['dir_site'].'MDB2/Driver/mysql.php');
 
 class DFDB extends MDB2 {
 	public function & factory($dsn, $options = false) {

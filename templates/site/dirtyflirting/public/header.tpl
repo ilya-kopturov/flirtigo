@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>
-			FlirtiGo Adult Dating, Sex Date and Adult Personals site
+		FlirtiGo Adult Dating, Sex Date and Adult Personals site
 	</title>
     <meta name="description" content="FlirtiGo is top social networking site for adult dating and personals for people looking for casual sex and sex dates">
     <meta name="keywords" content="Hornybook, Horny Book, dating, adult dating, online dating, vietnamese dating, dating chat, internet dating, horny housewives, adult social network, adult social networking, adult personals, married sex, married personals, live cams, live sex webcams, adult live webcam, live sex webcams, sex date, sex dating, adult date"> 
@@ -23,7 +23,7 @@
 	<script type="text/javascript" src="/templates/site/dirtyflirting/public/js/functions.js"></script>
 	<script type="text/javascript" src="http://cufon.shoqolate.com/js/cufon-yui.js"></script>
 	<script type="text/javascript" src="{$cfg.template.url_template}login/js/VenetoHand_400.font.js"></script>
-		<script type="text/javascript" src="{$cfg.template.url_template}public/js/js.js"></script>
+	<script type="text/javascript" src="{$cfg.template.url_template}public/js/js.js"></script>
 
 	{include file="site/dirtyflirting/common/js+css.tpl"}
 		
@@ -51,10 +51,9 @@
 	<div class="logo_container2">
 		<a href="/{if $smarty.session.sess_id}mem_{/if}index.php"><img src="/templates/site/dirtyflirting/login/images/hornybook_header.gif" alt="FlirtiGo.com" /></a>
 	</div>
+	{if $sess_id == 0}
 	<div class="fb_login_button">
-		{if $user_id == 0}
-			<a href="{$url}" class="a_fb_login">&nbsp;</a>
-		{/if}
+		<a href="{$url}" class="a_fb_login">&nbsp;</a>
 	</div>
 	<div class="login_container">
 		<div class="input_container">
@@ -72,6 +71,11 @@
 	  		<a href="/password.php">Forgot Password?</a>
 	  	</div>
 	</div>
+	{else}
+		<div class="logout_container">
+			[<a href="{$logout_url}" class="logout">Logout</a>]
+		</div>
+	{/if}
 	</form>
 </div>
 

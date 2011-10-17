@@ -20,6 +20,8 @@ if (!defined('IN_MAINSITE')) die("Critical Error!");
 //ini_set('display_errors', 1);
 //error_reporting(E_ALL);
 
+//$path = '/usr/lib/pear';
+//set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 
 include_once realpath(dirname(__FILE__) . '/../config') . '/common.php';		// fphp
 
@@ -28,9 +30,9 @@ include_once realpath(dirname(__FILE__) . '/../config') . '/common.php';		// fph
 include_once(PATH_INCLUDES . 'Zend/Loader.php');
 spl_autoload_register('Zend_Loader::autoload');
 
-include_once(PATH_INCLUDES . "config/crypt.php");
-include_once(PATH_INCLUDES . "config/db.php");
 include_once(PATH_INCLUDES . "config/path.php");
+include_once(PATH_INCLUDES . "config/db.php");
+include_once(PATH_INCLUDES . "config/crypt.php");
 include_once(PATH_INCLUDES . "config/mail.php");
 //override server settings
 @include_once(PATH_INCLUDES . 'config/local.conf.php');
@@ -114,3 +116,9 @@ include_once(PATH_INCLUDES . "class/liveuser.php" );
 /* Get Region & Country */
 $userArea = ip2area($_SERVER['REMOTE_ADDR']);
 $smarty->assign("userArea", $userArea);
+
+/* FB and login vars init */
+$smarty->assign("url", $fb_auth_url);
+$smarty->assign('sess_id', $_SESSION["sess_id"]);
+$smarty->assign('logout_url', $logout_url);
+/* End FB and login vars init */
