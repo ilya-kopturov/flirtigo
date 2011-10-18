@@ -5,7 +5,7 @@ if (!defined('IN_MAINSITE')) die("Critical Error!");
 
 $lu = LiveUser::getUser();
 $db->close();
-ob_end_flush(); 
+ob_end_flush();
 ?>
 <?php
 /* set page title*/

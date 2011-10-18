@@ -8,7 +8,6 @@ define("IN_MAINSITE", TRUE);
 include ("../includes/" . "require" . "/" . "site_head.php");
 
 ///////////// SESSION /////////////
-session_start();
 //if($_SESSION['sess_id']==5173084){	var_dump($_SESSION);}
 require('form_options.php');
 if(isset($_GET['id']))

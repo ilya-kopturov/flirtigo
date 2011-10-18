@@ -66,8 +66,8 @@ if(isset($_POST['screenname']) && isset($_POST['pass']))
 	if($result = $db->get_row($sql_login))
 	{
 		$_SESSION["sess_id"]          = $result['id'];
-//		$_SESSION["sess_screenname"]  = $result['screenname'];
-//		$_SESSION["sess_pass"]        = $result['pass'];
+		$_SESSION["sess_screenname"]  = $result['screenname'];
+		$_SESSION["sess_pass"]        = $result['pass'];
 		$_SESSION["sess_sex"]         = $result['sex'];
 		$_SESSION["sess_typeusr"]     = $result['typeusr'];
 		$_SESSION["sess_looking"]     = $result['looking'];

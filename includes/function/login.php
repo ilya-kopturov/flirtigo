@@ -6,11 +6,12 @@ function check_session($db, $check_password, $check_username, $check_access = 0)
 {
 	global $cfg;
 	global $fb_user_id;
-    if($check_username !== '' && $check_password !== '') {
-		$sql = "SELECT `id` FROM `tblUsers` WHERE `screenname` = '".$check_username."' AND `pass` = '".$check_password."' AND `disabled` = 'N'";
-		$site_login_check = $db->get_var($sql);
-	} else {
-        $site_login_check = null;
+    $site_login_check = null;
+    if(!$fb_user_id) {
+        if($check_username !== '' && $check_password !== '') {
+            $sql = "SELECT `id` FROM `tblUsers` WHERE `screenname` = '".$check_username."' AND `pass` = '".$check_password."' AND `disabled` = 'N'";
+            $site_login_check = $db->get_var($sql);
+        }
     }
 	
     if(!($site_login_check OR $fb_user_id))
