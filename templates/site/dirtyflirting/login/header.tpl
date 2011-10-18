@@ -10,7 +10,7 @@
 	<script type="text/javascript" src="{$cfg.template.url_template}login/js/functions.js"></script>
 	<script type="text/javascript" src="{$cfg.template.url_template}login/js/rounded_corners_lite.inc.js"></script>
 	<script type="text/javascript" src="http://cufon.shoqolate.com/js/cufon-yui.js"></script>
-	<script type="text/javascript" src="{$cfg.template.url_template}login/js/VenetoHand_400.font.js"></script>
+	<script type="text/javascript" src="{$cfg.template.url_template}login/js/VenetoHand_500.font.js"></script>
 
 	{include file="site/dirtyflirting/common/js+css.tpl"}
 

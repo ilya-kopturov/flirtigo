@@ -60,7 +60,7 @@
 .ui-tabs-nav a span {border: none ! important; padding: 0 ! important; margin: 0 ! important;}
 
 .ui-tabs-nav a,.tabs_bd span,.tabs_bd a {
-	margin: 1px 0 0;
+	margin: 0px 0 0 0;
 	/* position: relative makes opacity fail for disabled tab in IE */
 	/* color: #27537a; */
 	font-weight: bold;
@@ -68,14 +68,16 @@
 	text-decoration: none;
 	white-space: nowrap; /* required in IE 6 */
 	outline: 0; /* prevent dotted border in Firefox */
+    height: 16px;
 }
 
 .ui-tabs-nav .ui-tabs-selected a,.tabs_bd span.curr {
 	position: relative;
-	top: 1px;
+	top: 0px;
 	z-index: 2;
 	margin-top: 0;
 	color: #000;
+    height: 16px;
 }
 
 .ui-tabs-nav a span, .tabs_bd span {

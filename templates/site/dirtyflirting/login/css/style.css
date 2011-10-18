@@ -505,21 +505,21 @@ div.stats_bold {
 #featured_block {
 	float: left;
 	width: 480px;
-	height: 330px;
+	height: 320px;
 	padding: 7px 7px 0px 7px;
 }
 
 #featured_block .caption {
 	float: left;
 	width: 250px;
-	height: 30px;
+	height: 24px;
 	text-align: left;
 }
 
 #featured_block .tabs_header {
 	float: left;
 	width: 200px;
-	height: 30px;
+	height: 24px;
 	margin: 0px;
 	padding: 0px;
 	position: relative;
@@ -527,7 +527,7 @@ div.stats_bold {
 
 #featured_block #viewcontent {
 	float: right;
-	width: 200px;
+	width: 230px;
 	height: 20px;
 	position: absolute;
 	bottom: 0px;
@@ -537,13 +537,13 @@ div.stats_bold {
 #featured_block #viewcontent ul {
 	margin: 0px;
 	padding: 0px;
-	width: 210px;
+	width: 230px;
 }
 
 #featured_block .tabs_content {
 	clear: both;
 	width: 480px;
-	height: 250px;
+	height: 260px;
 	background-color: white;
 	padding: 0px;
 	margin: 0px;
@@ -761,10 +761,10 @@ div.stats_bold {
 #inbox_snapshot_block #tab_header_inbox {
 	float: left;
 	width: 45px;
-	height: 24px;
+	height: 20px;
 	text-align: right;
 	padding: 0px;
-	margin: 0px;
+	margin: 4px 0 0 0;
 }
 
 #inbox_snapshot_block .more {
@@ -824,13 +824,13 @@ div.stats_bold {
 #my_hb_block .caption {
 	float: left;
 	width: 300px;
-	height: 30px;
+	height: 24px;
 	text-align: left;
 }
 
 #my_hb_block #tabs_container {
 	float: left;
-	height: 30px;
+	height: 24px;
 	width: 150px;
 	padding: 0px;
 	margin: 0px;
@@ -907,7 +907,12 @@ div.stats_bold {
 	float: left;
 	margin: 8px 10px 0px 12px;
 }
-
+.div_pic_no_user {
+    border: 2px solid black;
+    height: 92px;
+    width: 92px;
+    background-color: #9B9A9A;
+}
 #my_hb_block .tabs_content .pic_no_user img {
 	width: 94px;
 	height: 94px;
@@ -932,7 +937,7 @@ div.stats_bold {
 }
 
 #my_profile_block .caption {
-	height: 30px;
+	height: 20px;
 	text-align: left;
 	padding-left: 10px;
 }
@@ -965,7 +970,7 @@ div.stats_bold {
 	top: 0px;
 	left: 0px;
 	z-index: 1;
-	border: 0px;
+	border: 0;
 }
 
 #my_profile_block .preview .thumb .photo {

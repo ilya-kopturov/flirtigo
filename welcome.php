@@ -8,6 +8,7 @@ define("IN_MAINSITE", TRUE);
 
 include ("./includes/" . "require" . "/" . "site_head.php");
 
+
 if(isset($_GET['screen_name'])){
 $smarty->assign("screen_name", htmlentities(strip_tags($_GET['screen_name'])));
 }

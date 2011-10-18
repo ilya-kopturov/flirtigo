@@ -10,7 +10,6 @@ define("IN_MAINSITE", TRUE);
 include ("./includes/" . "require" . "/" . "site_head.php");
 
 check_session($db, $_SESSION['sess_pass'], $_SESSION['sess_screenname'], 0);
-
 /* ... sql ... */
 
 
@@ -35,8 +34,6 @@ if(isset($_GET['error'])){
 
 // ...  smarty ... //
 $smarty->register_function('age', 'smarty_age');
-
-$smarty->assign('logout_url', $logout_url);
 
 $smarty->display( $cfg['template']['dir_template'] . "login/" . "header.tpl" );
 $smarty->display( $cfg['template']['dir_template'] . "login/" . "searchbasic.tpl" );

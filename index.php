@@ -5,6 +5,7 @@ define("IN_MAINSITE", TRUE);
 
 include ("./includes/" . "require" . "/" . "site_head.php");
 
+
 /* ... featured faces ... */
 $featured = @$db->get_results("SELECT u.`id`, u.`screenname`, u.`country`, u.`city`, u.`typeloc`, u.`typeusr`, 
                                       u.`joined`, u.`birthdate`
@@ -13,7 +14,6 @@ $featured = @$db->get_results("SELECT u.`id`, u.`screenname`, u.`country`, u.`ci
                                       u.`featured` = 'Y'
                                ORDER BY rand() 
                                LIMIT  15");
-
 $featured = array_merge($featured, range(count($featured), 15));
 /* ..end featured faces.. */
 
