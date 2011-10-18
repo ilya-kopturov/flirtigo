@@ -2,7 +2,7 @@
 /* $Id: showphoto.php 536 2008-06-13 13:21:46Z andi $ */
 
 define("IN_MAINSITE", TRUE);
-include ("includes/require/site_head.php");
+include ("includes/require/site_head_no_fb.php");
 
 $order = "`id` ASC";
 
