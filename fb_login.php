@@ -9,7 +9,7 @@ if(!$fb_user_id) {
 	// here user Not logged in via FB. redirect to home
 	header("Location: " . $cfg['path']['url_site']);
 }
-
+// get FB data
 $fb_data = @$db->query("
 	SELECT 
 		fb_id
@@ -20,7 +20,7 @@ if($fb_data) {
 	$row = $fb_data->fetchRow();
 }
 if(is_array($row)) {
-	// this FB id is exist. Redirect to start page
+	// this FB id is exist. Redirect to standard login page
 	header("Location: " . $cfg['path']['url_site'] . 'login.php');
 	// TODO: save log if needed
 } else {

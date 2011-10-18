@@ -21,7 +21,7 @@ if ($fb_user_id) {
 	}
 	catch (Exception $e)
 	{
-		echo "FB exception";
+		echo "";
 		$fb_user_id = null;
 	}
 }

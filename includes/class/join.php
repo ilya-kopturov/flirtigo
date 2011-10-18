@@ -31,6 +31,50 @@ class join
 
 	function checkdata($user_id)
 	{
+        global $fb_user_id;
+         
+        if($fb_user_id) {
+            // check for exist record screenname && pass in DB
+            $fb_data = $this->db->query("
+                SELECT 
+                    screenname, 
+                    pass
+                FROM tblUsers
+                WHERE id = '".$user_id."';
+            ");
+            if($fb_data) {
+                $row = $fb_data->fetchRow();
+            }
+//var_dump($row);
+//var_dump (is_array($row) && !empty($row['screenname']) &&  !empty($row['pass']));
+            if(is_array($row) && !empty($row['screenname']) &&  !empty($row['pass'])) {
+                // this way: user already have record in db and try ReJoin.
+                // make delete the session and redir to homepage
+                session_unregister("sess_id");
+                session_unregister("sess_screenname");
+                session_unregister("sess_pass");
+                session_unregister("sess_sex");
+                session_unregister("sess_typeusr");
+                session_unregister("sess_looking");
+                session_unregister("sess_accesslevel");
+                session_unregister("sess_rating");
+                session_unregister("sess_stats");
+                session_unregister("sess_newmails");
+                session_unregister("sess_city");
+                session_unregister("sess_country");
+                session_unregister("sess_state");
+                session_unregister("sess_rating");
+                session_unregister("sess_votes");
+                session_unregister("sess_withpicture");
+                session_unregister("sess_withvideo");
+
+                session_destroy();
+
+                header_location($cfg['path']['url_site'] . 'index.php?error=' . urlencode("You've already joined. Please login."));
+            }
+        }
+        /////////////////////////////////////////////////////////////////////////////
+        
 		if (!$this->data['screen_name'])
 		{
 			$this->error = "Please enter your Screen Name.";
@@ -247,7 +291,6 @@ class join
 	}
 
 	function updatedata($user_id) {
-
 		$this->pass = verify(8);
 		$sql_update = "
 			UPDATE tblUsers 

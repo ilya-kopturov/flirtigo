@@ -24,8 +24,8 @@ $uid = $_GET['id'] ? $_GET['id'] : $_SESSION['sess_id'];
 $private = false;
 if ($uid && !$photo_id) {
 	$photo = $db->get_row("SELECT p.* 
-                            FROM   tblPhotos p  
-                            WHERE  p.user_id = '$uid' AND p.photo_main = 'Y' AND p.approved = 'Y'");
+	                       FROM   tblPhotos p  
+	                       WHERE  p.user_id = '$uid' AND p.photo_main = 'Y' AND p.approved = 'Y'");
 	$private = ($photo['gallery'] == '0');
 } else {
 	$photo = $db->get_row("SELECT * FROM `tblPhotos` WHERE `id` = '$photo_id' LIMIT 1");

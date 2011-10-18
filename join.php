@@ -6,35 +6,31 @@ define("IN_MAINSITE", TRUE);
 include("./includes/" . "require" . "/" . "site_head.php" );
 include("captcha"                 . "/" . "rand.php"      );
 
-/* FB and login vars init */
-$smarty->assign("url", $fb_auth_url);
-$smarty->assign('sess_id', $_SESSION["sess_id"]);
-$smarty->assign('logout_url', $logout_url);
-/* End FB and login vars init */
-
 /* ... form submit ... */
-if($fb_user_id) {
-	$fb_data = @$db->query("
-		SELECT 
-			user_id
-		FROM tblFBData
-		WHERE fb_id = '".$fb_user_id."';
-	");
-	if($fb_data) {
-		$row = $fb_data->fetchRow();
-	}
-	if(is_array($row)) {
-		$user_id = intval($row['user_id']);
-	} else {
-		$user_id = 0;
-	}
-	$join = new join($db, $_POST, $user_id);
-	$smarty->assign("data", $join->data);
-	$smarty->assign("error", $join->error);
-} elseif (isset($_POST['submit']) or isset($_POST['submit_x']) or isset($_POST['submit_y'])) {
-	$join = new join($db, $_POST);
-	$smarty->assign("data", $join->data);
-	$smarty->assign("error", $join->error);
+if (isset($_POST['submit']) or isset($_POST['submit_x']) or isset($_POST['submit_y'])) {
+    if($fb_user_id) {
+        $fb_data = @$db->query("
+            SELECT 
+                user_id
+            FROM tblFBData
+            WHERE fb_id = '".$fb_user_id."';
+        ");
+        if($fb_data) {
+            $row = $fb_data->fetchRow();
+        }
+        if(is_array($row)) {
+            $user_id = intval($row['user_id']);
+        } else {
+            $user_id = 0;
+        }
+        $join = new join($db, $_POST, $user_id);
+        $smarty->assign("data", $join->data);
+        $smarty->assign("error", $join->error);
+    } else {
+        $join = new join($db, $_POST);
+        $smarty->assign("data", $join->data);
+        $smarty->assign("error", $join->error);
+    }
 }
 elseif(isset($_POST['reload_pic']))
 {
