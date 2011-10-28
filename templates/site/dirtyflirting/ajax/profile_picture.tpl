@@ -48,24 +48,25 @@
 		
 	</div>
 	<div class="flash" id="fsUploadProgress" style="clear:left;">
-		<!-- This is where the file progress gets shown.  SWFUpload doesn't update the UI directly.
-			The Handlers (in handlers.js) process the upload events and make the UI updates -->
-	</div>
-	<div><img src="{$cfg.image.pixel}" height="20"></div>
-	<div style="font-size:11px;text-align:left;">
-		<div>By uploading content to your profile you agree to the following:</div>
-		<ol>
-			<li>Only images of yourself and your partner (if applicable) are allowed.</li>
-			<li>If you upload sexually explicit content you agree to comply with <a href="javascript:;" onclick="$('#profile_pictures').load('{$cfg.path.url_site}2257.php?tabname=picture&{rnd_md5}');">the additonal terms stated here</a></li>
-			<li>No images of animals, anyone appearing under 18 or other items other than the person(s) featured in the profile. No images of acts such as torture or pain.</li>
-			<li>No contact details to be included in any images.</li>
-			<li>Don't upload single images bigger than 1MB</li>
-			<li><STRONG>GUYS: No Pics of your ugly stick on its own. If it takes up more than 20% of the picture, take another. If you are worried about showing your face or more than your stick, use the private gallery function above.</strong></li>
-
-		</ol>
-	</div>
-</div>
-		<div><input type="submit" value="{if $photo}SUBMIT{else}Upload Picture{/if}" id="btnUpload"></div>
+            <!-- This is where the file progress gets shown.  SWFUpload doesn't update the UI directly.
+                The Handlers (in handlers.js) process the upload events and make the UI updates -->
+        </div>
+        <div><img src="{$cfg.image.pixel}" height="20"></div>
+        <div style="text-align: left;"><input type="submit" value="{if $photo}SUBMIT{else}Upload Picture{/if}" id="btnUpload"></div>
+        <div style="font-size:11px;text-align:left;">
+            <div><p>By uploading content to your profile you agree to the following:</p>
+            <ul class="f_none">
+                <li class="f_none">Only images of yourself and your partner (if applicable) are allowed.</li>
+                <li class="f_none">If you upload sexually explicit content you agree to comply with <a href="javascript:;" onclick="$('#profile_pictures').load('{$cfg.path.url_site}2257.php?tabname=picture&{rnd_md5}');">the additonal terms stated here</a></li>
+                <li class="f_none">No images of animals, anyone appearing under 18 or other items other than the person(s) featured in the profile. No images of acts such as torture or pain.</li>
+                <li class="f_none">No contact details to be included in any images.</li>
+                <li class="f_none">Don't upload single images bigger than 1MB</li>
+                <li class="f_none"><STRONG>GUYS: No Pics of your ugly stick on its own. If it takes up more than 20% of the picture, take another. If you are worried about showing your face or more than your stick, use the private gallery function above.</strong></li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    
 </form>
 {literal}
 <script type="text/javascript">

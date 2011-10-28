@@ -133,7 +133,7 @@ table.featuredPopularSmall {
 }
 
 table.memberstable {
-	border: 1px solid #000000;
+	border: 0px solid #000000;
 	background-color: #EFEFEF;
 }
 
@@ -1464,7 +1464,30 @@ ul.menu_text li a {
 	float: left;
 }
 
-#Live_PornStar_Feeds .memberstable.normaltext,#Live_Amateur_Cams .memberstable.normaltext
-	{
+#Live_PornStar_Feeds .memberstable.normaltext,#Live_Amateur_Cams .memberstable.normaltext {
 	float: left;
+}
+.div_button {
+    height: 25px;
+}
+.div_button span {
+    height: 25px;
+    padding: 0 0px 0 4px;
+    background-image: url(../images/buttons/submit-l-f.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    float: left;
+}
+.div_button input {
+    float: left;
+    height: 25px;
+    border: 0;
+    background-color: transparent;
+    display: block;
+    background-image: url(../images/buttons/submit-r-f.png);
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 8px 0 4px;
 }

@@ -26,7 +26,7 @@
 	<link rel="stylesheet" type="text/css" href="/templates/site/dirtyflirting/public/css/style.css">
 	<link rel="stylesheet" type="text/css" href="/templates/site/dirtyflirting/login/css/member.css">
 
-	<script type="text/javascript" src="/templates/site/dirtyflirting/public/js/functions.js"></script>
+	<script type="text/javascript" src="{$base_url}templates/site/dirtyflirting/public/js/functions.js"></script>
 	{include file="site/dirtyflirting/common/js+css.tpl"}
 </head>
 <body onLoad="window.scrollTo(0,0);">
@@ -35,22 +35,22 @@
 <div class="hiddenPic">
 	<img src="/js/busy.gif">
 	<img src="/js/jqm_close.gif">
-	<img src="/templates/site/dirtyflirting/public/images/redstar.gif">
-	<img src="/templates/site/dirtyflirting/public/images/graystar.gif">
+	<img src="{$base_url}templates/site/dirtyflirting/public/images/redstar.gif">
+	<img src="{$base_url}templates/site/dirtyflirting/public/images/graystar.gif">
 </div>
 
 {* load Flag *}
 <div class="center">
-  <img src="/templates/site/dirtyflirting/public/images/hornybook_{$userArea.area|lower}flag.jpg" style="width: 746px; border: 0px;" alt="FlirtiGo.com" title="FlirtiGo.com" />
+  <img src="{$base_url}templates/site/dirtyflirting/public/images/hornybook_{$userArea.area|lower}flag.jpg" style="width: 746px; border: 0px;" alt="FlirtiGo.com" title="FlirtiGo.com" />
 </div>
 
-<div class="clear"><img src="/images/pixel.gif" height="0" width="0" /></div>
+<div class="clear"><img src="{$base_url}images/pixel.gif" height="0" width="0" /></div>
 
 {* load Header Pic *}
 <div class="center" id="pub_header">
     <form method="post" action="/login.php">
 	<div class="logo_container">
-		<a href="/{if $smarty.session.sess_id}mem_{/if}index.php"/><img src="/templates/site/dirtyflirting/login/images/hornybook_header.gif" alt="FlirtiGo.com" /></a>
+		<a href="/{if $smarty.session.sess_id}mem_{/if}index.php"/><img src="{$base_url}templates/site/dirtyflirting/login/images/hornybook_header.gif" alt="FlirtiGo.com" /></a>
 	</div>
 	<div class="login_container">
 		<div class="input_container">
@@ -61,7 +61,7 @@
 			<input type="password" name="pass" class="header" value="Password" onFocus="this.value='';" />
 	  	</div>
 		<div style="float: left; height: 27px;">
-			<input type="image" src="/templates/site/dirtyflirting/public/images/hornybook_blogin.gif" style="border: 0px;" alt="Login" />
+			<input type="image" src="{$base_url}templates/site/dirtyflirting/public/images/hornybook_blogin.gif" style="border: 0px;" alt="Login" />
 	  	</div>
 	  	<div class="clear"></div>
 	  	<div class="forgot_assword">
@@ -71,6 +71,6 @@
 	</form>
 </div>
 
-<div class="clear"><img src="/images/pixel.gif" height="0" width="0" /></div>
+<div class="clear"><img src="{$base_url}images/pixel.gif" height="0" width="0" /></div>
 
 {include file="site/dirtyflirting/public/error.tpl"}

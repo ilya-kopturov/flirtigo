@@ -3,7 +3,7 @@
 
 define("IN_MAINSITE", TRUE);
 
-include ("./includes/" . "require" . "/" . "site_head.php");
+include ($cfg['path']['dir_include'] . "require" . "/" . "site_head.php");
 
 check_session($db, $_SESSION['sess_pass'], $_SESSION['sess_screenname'], 0);
 $featured      = mem_featuredPopular("small");
@@ -55,5 +55,5 @@ $smarty->unregister_function('sexualactivities');
 $smarty->unregister_function('screenname');
 */
 
-include ("./includes/" . "require" . "/" . "site_foot.php");
+include ($cfg['path']['dir_include'] . "require" . "/" . "site_foot.php");
 ?>

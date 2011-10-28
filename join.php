@@ -7,7 +7,7 @@ include("./includes/" . "require" . "/" . "site_head.php" );
 include("captcha"                 . "/" . "rand.php"      );
 
 /* ... form submit ... */
-if (isset($_POST['submit']) or isset($_POST['submit_x']) or isset($_POST['submit_y'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if($fb_user_id) {
         $fb_data = @$db->query("
             SELECT 

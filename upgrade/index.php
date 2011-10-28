@@ -4,12 +4,13 @@
                                                                                          */
 define("IN_MAINSITE", TRUE);
 
-
 include ("../includes/" . "require" . "/" . "site_head.php");
 
 ///////////// SESSION /////////////
 //if($_SESSION['sess_id']==5173084){	var_dump($_SESSION);}
-require('form_options.php');
+
+require($cfg['path']['dir_site'] . 'upgrade/form_options.php');
+
 if(isset($_GET['id']))
 {
     $sql_login = "SELECT `id`, `screenname`, `pass`,`email`, `sex`, `typeusr`, `looking`, `rating`, `votes`, `city`, `country`,
@@ -156,7 +157,7 @@ $client_currency=='USD';
 if(!isset($tkid)){ $tkid='113116:5153';$currency='$';$client_currency='USD';}
 
 if($countryName == "Canada" || $countryName == "Israel" || $countryName == "Romania"){
-	$smarty->assign("footerPic", "<img src='/images/support-address.gif' />");
+	$smarty->assign("footerPic", "<img src='{$base_url}images/support-address.gif' />");
 }
 
 $smarty->assign("cfg",$cfg);
@@ -307,7 +308,7 @@ syslog(LOG_INFO, var_export($_POST['ptype'],true));
  		header_location('http://select.2000charge.com/PaymentOptions.asp?ID=9894&Language=English&Username='.$_SESSION['sess_screenname'].'&XField=&Userpassword='.$_SESSION['sess_pass'].'&Userpassword2='.$_SESSION['sess_pass']);
  	}
  	if($_POST['ptype']=='mailin'){
-		header_location('mailin.php');
+		header_location($cfg['template']['dir_site'] . 'upgrade/mailin.php');
  	}
  	if(isset($_GET['pid']) and (int) $_GET['pid'] > 0){
 		if($users['typeusr']=='Y'){
@@ -329,6 +330,9 @@ $smarty->register_function('location', 'smarty_location');
 $smarty->register_function('age', 'smarty_age');
 $smarty->register_function('rateme', 'smarty_rateme');
 $smarty->register_function('ratemessl', 'smarty_rateme_ssl');
+
+
+
 
 $smarty->display( $cfg['template']['dir_template'] . "login/" . "headerssl.tpl" );
 

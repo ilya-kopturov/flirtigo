@@ -19,22 +19,35 @@
 					 <td>
 						 <div class="tabs_header" cellpadding="0" cellspacing="0">
 							 <div style="padding:10px 0px;">
-								 <div colspan="4" class="redtitle" style="text-align: left;">Basic Search</div>
-							 </div>
-							 <ul class="tabs_bd">
-								 <li class="featuredPopular1">
-									 <span class="curr">Basic</span>
-								 </li>
-				
-								 <li>
-									 <a href="{$cfg.path.url_site}mem_searchdetailed.php"><span>Detailed</span></a>
-								 </li>
-							 </ul>
-						 </div>
+                                    <div colspan="4" class="redtitle" style="text-align: left;">Basic Search</div>
+                                </div>
+<!--
+                                <ul class="tabs_bd">
+                                    <li class="featuredPopular1">
+                                        <span class="curr">Basic</span>
+                                    </li>
+                                    <li>
+                                        <a href="{$cfg.path.url_site}mem_searchdetailed.php"><span>Detailed</span></a>
+                                    </li>
+                                </ul>
+                                <div class="clear"></div>
+-->
+                                <div class="div_new_tabs_bd">
+                                    <ul class="new_tabs_bd">
+                                        <li class="featuredPopular1 li_new_tabs_bd_a">
+                                            <a href="#"><span>Basic</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="{$cfg.path.url_site}mem_searchdetailed.php"><span>Detailed</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
 					 </td>
 				 </tr>
 				 <tr>
 					 <td align="center">
+                            <div style="padding: 5px 10px; background-color: #EFEFEF;">
 						 <table class="memberstable normaltext" style="width: 760;" cellpadding="0" cellspacing="0">
 							 <tr style="padding: 25px 5px 5px 10px;">
 								 <td width="130" class="label">
@@ -74,14 +87,14 @@
 										 <br>
 									 <input type="checkbox" name="for[6]"	value="6" {if $search_data.for[6] == 6 && $search_data.for[6] != ''}checked{/if} class="search_input"><label>{$cfg.profile.for[6]}</label>
 								 </td>
-							 </tr>
-							 <tr style="padding: 35px 5px 5px 10px;">
-								 <td width="380" align="left" valign="bottom" colspan="2" >
-									 Members details
-								 </td>
-								 <td width="380" align="left" valign="bottom" colspan="2" >
-									 Partner (Couples Only)
-								 </td>
+                                    </tr>
+                                    <tr style="padding: 35px 5px 5px 10px;">
+                                        <td width="380" align="left" valign="bottom" colspan="2" style="padding-top: 20px;" >
+                                            Members details
+                                        </td>
+                                        <td width="380" align="left" valign="bottom" colspan="2" style="padding-top: 20px;" >
+                                            Partner (Couples Only)
+                                        </td>
 							 </tr>
 							 <tr style="padding: 5px 5px 5px 10px;">
 								 <td width="130" class="label">
@@ -222,13 +235,19 @@
 								 <td width="380" class="label" colspan="2">
 									 <input type="checkbox" name="withpicture"	value="1" {if $search_data.withpicture == 1}checked{/if} class="search_input"><label>only show members with picture or videos</label>
 								 </td>
-							 </tr>
-							 <tr style="padding: 35px 5px 15px 5px;">
-								 <td align="center" colspan="4"><input type="image" src="{$cfg.template.url_template}login/images/dirtyflirting_button_search.gif" name="submit" /></td>
-							 </tr>
-						 </table>
-					 </td>
-				 </tr>
+                                    </tr>
+                                    <tr style="padding: 35px 5px 15px 5px;">
+                                        <td align="center" colspan="4">
+                                            <!--<input type="image" src="{$cfg.template.url_template}login/images/dirtyflirting_button_search.gif" name="submit" />-->
+                                            <div class="div_button">
+                                                <span style="margin: 0 0 0 330px;"><input type="submit" name="submit" value="Search" /></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
 			 </table>
 		 </form>
 		</td>

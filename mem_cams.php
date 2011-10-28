@@ -17,4 +17,3 @@ $smarty->display( $cfg['template']['dir_template'] . "login/" . "footer.tpl" );
 /*..end smarty..*/
 
 include ("./includes/" . "require" . "/" . "site_foot.php");
-?>

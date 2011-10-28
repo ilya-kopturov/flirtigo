@@ -7,7 +7,7 @@
 			</div>
 			<div class="tabs_container">
 				<div id="Top_Rated_button" class="indextabs" >Top Rated</div>
-				<div style="float: right; width: 5px;"><img src="/images/pixel.gif" style="width: 5px;" /></div>
+				<div style="float: right; width: 5px;"><img src="{$base_url}images/pixel.gif" style="width: 5px;" /></div>
 				<div id="Featured_button" class="indextabs_hover">Featured</div>
 			</div>
 			<div class="thumbs_container">
@@ -16,18 +16,18 @@
 					{if $featured[user].id}
 						<div class="pic_user">
 							<div class="thumb">
-								<a href="/profile/{screenname user_id=$featured[user].id}"><img class="bg" src="/templates/site/dirtyflirting/public/images/hornybook_bgpicturegrey.gif" alt="adult dating" /></a>
-								<img class="photo" src="/showphoto.php?id={$featured[user].id}&m=Y&t=s&p=1" alt="internet dating" />
+								<a href="{$base_url}profile/{screenname user_id=$featured[user].id}"><img class="bg" src="{$base_url}templates/site/dirtyflirting/public/images/hornybook_bgpicturegrey.gif" alt="adult dating" /></a>
+								<img class="photo" src="{$base_url}showphoto.php?id={$featured[user].id}&m=Y&t=s&p=1" alt="internet dating" />
 							</div>
-							<div class="smalltext info"><a href="/profile/{screenname user_id=$featured[user].id}" style="text-decoration: underline;">{$featured[user].screenname}</a></div>
+							<div class="smalltext info"><a href="{$base_url}profile/{screenname user_id=$featured[user].id}" style="text-decoration: underline;">{$featured[user].screenname}</a></div>
 							<div class="smalltext info">{age birthday=$featured[user].birthdate} Years Old</div>
 							<div class="smalltext info">{$featured[user].city}</div>
 						</div>
 					{else}
-						<div class="pic_no_user"><img src="/templates/site/dirtyflirting/public/images/hornybook_bgpicturegrey_full.gif" alt="adult personals" /></div>
+						<div class="pic_no_user"><img src="{$base_url}templates/site/dirtyflirting/public/images/hornybook_bgpicturegrey_full.gif" alt="adult personals" /></div>
 					{/if}
 					{if $smarty.section.user.iteration % 4 == 0 && !$smarty.section.user.last}
-						<div style="clear: both;"><img src="/images/pixel.gif" height="1px"/></div>
+						<div style="clear: both;"><img src="{$base_url}images/pixel.gif" height="1px"/></div>
 					{/if}
 				{/section}
 				</div>
@@ -37,35 +37,35 @@
 							{if $toprated[user].id}
 								<div class="pic_user">
 									<div class="thumb">
-										<a href="/profile/{screenname user_id=$toprated[user].id}"><img class="bg" src="/templates/site/dirtyflirting/public/images/hornybook_bgpicturegrey.gif" alt="online dating" /></a>
-										<img	class="photo" src="/showphoto.php?id={$toprated[user].id}&m=Y&t=r&p=1" alt="adult social network" />
+										<a href="{$base_url}profile/{screenname user_id=$toprated[user].id}"><img class="bg" src="{$base_url}templates/site/dirtyflirting/public/images/hornybook_bgpicturegrey.gif" alt="online dating" /></a>
+										<img	class="photo" src="{$base_url}showphoto.php?id={$toprated[user].id}&m=Y&t=r&p=1" alt="adult social network" />
 									</div>
-									<div class="smalltext info"><a href="/profile/{screenname user_id=$toprated[user].id}" style="text-decoration: underline;">{$toprated[user].screenname}</a></div>
+									<div class="smalltext info"><a href="{$base_url}profile/{screenname user_id=$toprated[user].id}" style="text-decoration: underline;">{$toprated[user].screenname}</a></div>
 									<div class="smalltext info">{age birthday=$toprated[user].birthdate} Years Old</div>
 									<div class="smalltext info">{$toprated[user].city}</div>
 								</div>
 							{else}
-								<div class="pic_no_user"><img src="/templates/site/dirtyflirting/public/images/hornybook_bgpicturegrey_full.gif" alt="adult social networking" /></div>
+								<div class="pic_no_user"><img src="{$base_url}templates/site/dirtyflirting/public/images/hornybook_bgpicturegrey_full.gif" alt="adult social networking" /></div>
 							{/if}
 							{if $smarty.section.user.iteration % 4 == 0 && !$smarty.section.user.last}
-								<div class="clear"><img src="/images/pixel.gif" style="width: 1px;" alt="married sex" /></div>
+								<div class="clear"><img src="{$base_url}images/pixel.gif" style="width: 1px;" alt="married sex" /></div>
 							{/if}
 						{/section}
 						</div>
 						{*end Top Rated*}
 					</div>
-					<div class="clear"><img src="/images/pixel.gif" height="1px"/></div>
+					<div class="clear"><img src="{$base_url}images/pixel.gif" height="1px"/></div>
 					<div class="more">
-						[<a href="/join.php">more</a>]
+						[<a href="{$base_url}join.php">more</a>]
 					</div>
 		</div>
 	</div>
 	<div class="grey" id="right_block">
 		<div class="sugnup_container">
-				<a href="/join.php"><img src="/templates/site/dirtyflirting/public/images/hornybook_bcreateaccount.gif" alt="Free" /></a>
+				<a href="{$base_url}join.php"><img src="{$base_url}templates/site/dirtyflirting/public/images/hornybook_bcreateaccount.gif" alt="Free" /></a>
 		</div>
 		<div style="width: 240px; height: 15px; background-color: white;">
-			<img src="/images/pixel.gif" style="height: 15px;">
+			<img src="{$base_url}images/pixel.gif" style="height: 15px;">
 		</div>
 			<div class="grey" style="float: left; width: 233px; height: 320px; padding: 7px 3px 0px 3px;">
 				<div class="container_text" style="float: left; height: 30px; text-align: left;">
@@ -85,14 +85,14 @@
 								<option value="5">Woman seeking Couples</option>
 							</select>
 						</div>
-						<div class="clear"><img src="/images/pixel.gif" style="width: 3px; border: 0px;" alt="live cams" /></div>
+						<div class="clear"><img src="{$base_url}images/pixel.gif" style="width: 3px; border: 0px;" alt="live cams" /></div>
 						<div style="float: left; width: 54px; text-align: left;">Ages</div>
 				<div style="float: left; width: 155px; text-align: left;">
 					<select style="width:50px" name="age_from">{html_options values=$cfg.profile.age output=$cfg.profile.age selected=18}</select>
 					<span>to</span>
 					<select style="width:50px" name="age_to">{html_options values=$cfg.profile.age output=$cfg.profile.age selected=99}</select>
 							</div>
-						<div class="clear"><img src="/images/pixel.gif" style="width: 6px; border: 0px;" alt="live sex cams" /></div>
+						<div class="clear"><img src="{$base_url}images/pixel.gif" style="width: 6px; border: 0px;" alt="live sex cams" /></div>
 						<div style="float: left; width: 54px; text-align: left;">State</div>
 							<div style="float: left; width: 155px;">
 								<select name="state" style="vertical-align:middle; width:155px;">
@@ -102,7 +102,7 @@
 					{/foreach}
 					</select>
 							</div>
-						<div class="clear"><img src="/images/pixel.gif" style="width: 6px; border: 0px;" alt="sex date" /></div>
+						<div class="clear"><img src="{$base_url}images/pixel.gif" style="width: 6px; border: 0px;" alt="sex date" /></div>
 						<div style="float: left; width: 54px; text-align: left;">Country</div>
 						<div style="float: left; width: 155px;">
 							<select name="country" style="vertical-align:middle;width:155px;">
@@ -120,8 +120,8 @@
 							{/foreach}
 							</select>
 						</div>
-						<div class="clear"><img src="/images/pixel.gif" style="height: 6px; border: 0px;" alt="sex dating" /></div>
-						<div style="width: 204px; text-align: right;"><input type="image" name="login" src="/templates/site/dirtyflirting/login/images/hornybook_quicksearch.gif" /></div>
+						<div class="clear"><img src="{$base_url}images/pixel.gif" style="height: 6px; border: 0px;" alt="sex dating" /></div>
+						<div style="width: 204px; text-align: right;"><input type="image" name="login" src="{$base_url}templates/site/dirtyflirting/login/images/hornybook_quicksearch.gif" /></div>
 					</div>
 					</form>
 					<div class="container_text" style="float: left; height: 25px; text-align: left; padding-top: 5px;">
@@ -142,7 +142,7 @@
 		{* ... *}
 	</div>
 </div>
-<div class="clear"><img src="/images/pixel.gif" height="15px" alt="adult date"/></div>
+<div class="clear"><img src="{$base_url}images/pixel.gif" height="15px" alt="adult date"/></div>
 
 {literal}
 <script type="text/javascript">

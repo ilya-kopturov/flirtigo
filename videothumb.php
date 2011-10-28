@@ -1,9 +1,18 @@
 <?php
 define("IN_MAINSITE", TRUE);
-include ("includes/require/site_head.php");
 
-$video_id = (int)$_GET['id'];
-$uid = $_GET['user_id'] ? $_GET['user_id'] : $_SESSION['sess_id'];
+include ("includes/require/site_head_no_fb.php");
+if (isset($_get['id'])) {
+    $video_id = (int)$_GET['id'];
+} else {
+    $video_id = null;
+}
+
+if(isset($_GET['user_id'])) {
+    $uid = $_GET['user_id'];
+} else {
+    $uid = $_SESSION['sess_id'];
+}
 
 if (!$video_id && $uid) {
 	$video_id = $db->get_var("SELECT v.id FROM tblUsers u INNER JOIN tblVideos v ON u.id = v.user_id WHERE u.id = '$uid' AND v.video_main = 'Y'");
@@ -17,7 +26,12 @@ try {
 	$image = new Imagick($cfg['path']['dir_photos'] . 'novideo.jpg');
 }
 
-$t = $_GET['t'];
+if(isset($_GET['t'])) {
+    $t = $_GET['t'];
+} else {
+    $t = null;
+}
+
 $t = $cfg['image']["{$t}_x"] && $cfg['image']["{$t}_y"] ? $t : 'm';
 
 $image->scaleImage($cfg['image']["{$t}_x"], $cfg['image']["{$t}_y"]);

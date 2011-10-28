@@ -274,7 +274,7 @@
 
 				<a href="javascript:;" onclick="refreshimg(); return false;" title="Click to refresh the image">
 
-				<img src="/images/pixel.gif" width="132" height="46" alt="Loading..." title="Click me to refresh">
+				<img src="{$base_url}images/pixel.gif" width="132" height="46" alt="Loading..." title="Click me to refresh">
 
 				</a>
 
@@ -311,7 +311,7 @@
 
 					<td>
 
-						<input type="image" src="/templates/site/dirtyflirting/public/images/dirtyflirting_joinnow.gif" name="submit" />
+						<input type="image" src="{$base_url}templates/site/dirtyflirting/public/images/dirtyflirting_joinnow.gif" name="submit" />
 
 					</td>
 

@@ -5,6 +5,14 @@ define("IN_MAINSITE", TRUE);
 
 include ("./includes/" . "require" . "/" . "site_head.php");
 
+// redirect to fb login page if user logged in  facebook? but Session expired
+
+if($fb_user_id && (!isset($_SESSION['login_type']))) {
+    header("Location: " . $cfg['path']['url_site'] . "fb_login.php");
+}
+if(isset($_SESSION['login_type']) && $_SESSION['login_type'] > 0) {
+    header("Location: " . $cfg['path']['url_site'] . "mem_index.php");
+}
 
 /* ... featured faces ... */
 $featured = @$db->get_results("SELECT u.`id`, u.`screenname`, u.`country`, u.`city`, u.`typeloc`, u.`typeusr`, 
@@ -75,5 +83,5 @@ $smarty->display( $cfg['template']['dir_template'] . "public/" . "footer.tpl" );
 $smarty->unregister_function('age');
 /*.. end smarty ..*/
 
-include ("./includes/" . "require" . "/" . "site_foot.php");
+include ($cfg['path']['dir_include'] . "require" . "/" . "site_foot.php");
 ?>

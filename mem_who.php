@@ -1,11 +1,7 @@
 <?php
-/* DIRTYFLIRTING.COM                                                                         
-                                                                                           
-                                                                                           
-                                                                                         */
+/* DIRTYFLIRTING.COM */
 
 define("IN_MAINSITE", TRUE);
-
 
 include ("./includes/" . "require" . "/" . "site_head.php");
 include_once("MDB2.php");
@@ -61,7 +57,6 @@ $smarty->assign("online", $_GET['online']==1?1:0);
 $smarty->assign("pager", $paged_data);
 // ... end assign ... //
 
-
 // ...    smarty    ... //
 $smarty->register_function('age', 'smarty_age');
 $smarty->register_function('online', 'smarty_online');
@@ -85,4 +80,3 @@ $smarty->unregister_function('adddelete');
 // ...    smarty    ... //
 
 include ("./includes/" . "require" . "/" . "site_foot.php");
-?>

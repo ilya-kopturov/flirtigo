@@ -108,6 +108,9 @@ if (!(IS_AJAX === true) && $_SESSION['sess_id']) $_SESSION["sess_newmails"] = nu
 //Access Control List
 include_once(PATH_INCLUDES . "class/liveuser.php" );
 
+/* common vars */
+$smarty->assign('base_url', $cfg['path']['url_site']);
+
 /**
  * UK IP
  */

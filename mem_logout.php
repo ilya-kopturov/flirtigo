@@ -1,8 +1,5 @@
 <?php
-/* DIRTYFLIRTING.COM                                                                         
-                                                                                           
-                                                                                           
-                                                                                         */
+/* DIRTYFLIRTING.COM */
 
 define("IN_MAINSITE", TRUE);
 
@@ -20,6 +17,6 @@ session_unregister("sess_newmails");
 session_destroy();
 
 header_location($cfg['path']['url_site']);
+//print "<script type='text/javascript'>top.location = '" . $cfg['facebook']['canvas_url'] . "'</script>";
 
 include ("./includes/" . "require" . "/" . "site_foot.php");
-?>

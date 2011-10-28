@@ -79,16 +79,18 @@ img {
 	margin: 0px 0px 0px 0px;
 }
 #pub_header .fb_login_button {
-	width: 66px;
+	width: 72px;
 	height: 22px;
 	float: left;
 	margin: 58px 0px 0px 170px;
 }
 #pub_header .fb_login_button a {
+    /*
 	display: block;
 	background: url("/templates/site/dirtyflirting/login/images/fb_login_button.png") 0 0 no-repeat;
 	width: 66px;
 	height: 22px;
+    */
 }
 #pub_header .fb_login_button a:hover {
 	text-decoration: none;
@@ -832,4 +834,84 @@ div.footer li {
 
 div.footer ul {
 	margin: 3px 0 ! important;
+}
+/* new tabs */
+.div_new_tabs_bd {
+    height: 23px;
+    border-bottom: 1px solid #BFBDBD;
+    margin: 0 0 0px 0;
+}
+.new_tabs_bd {
+    height: 23px;
+    float: left;
+    position: relative;
+    top: 1px;
+}
+ul.new_tabs_bd li {
+    float: left;
+    height: 23px;
+    background-image: url(../images/tabs/tab-l.png);
+    background-repeat: no-repeat;
+    padding: 0 0 0 4px;
+    cursor: pointer;
+    margin: 0 1px 0 0;
+}
+ul.new_tabs_bd li a {
+    float: left;
+    height: 23px;
+    background-image: url(../images/tabs/tab-r.png);
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    padding: 0 4px 0 0px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    font-size: 13px;
+}
+ul.new_tabs_bd li a:hover {
+    text-decoration: none;
+}
+ul.new_tabs_bd li a span {
+    float: left;
+    height: 23px;
+    background-image: url(../images/tabs/tab-c.png);
+    background-repeat: repeat-x;
+    padding: 3px 6px 0px 6px;
+    cursor: pointer;
+}
+
+/* active tab: */
+ul.new_tabs_bd li.li_new_tabs_bd_a {
+    float: left;
+    height: 23px;
+    background-image: url(../images/tabs/tab-l-a.png);
+    background-repeat: no-repeat;
+    padding: 0 0 0 4px;
+    cursor: default;
+    margin: 0 1px 0 0;
+}
+ul.new_tabs_bd li.li_new_tabs_bd_a a {
+    float: left;
+    height: 23px;
+    background-image: url(../images/tabs/tab-r-a.png);
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    padding: 0 4px 0 0px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: default;
+    outline: none;
+    font-size: 13px;
+}
+ul.new_tabs_bd li.li_new_tabs_bd_a a span {
+    float: left;
+    height: 23px;
+    background-image: url(../images/tabs/tab-c-a.png);
+    background-repeat: repeat-x;
+    padding: 3px 6px 0px 6px;
+    cursor: default;
+}
+.f_none {
+    float: none;
 }

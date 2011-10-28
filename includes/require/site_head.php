@@ -6,6 +6,7 @@ ob_start();
 
 session_start();
 
+date_default_timezone_set ('Europe/Kiev');
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
@@ -17,15 +18,25 @@ if (!defined('IN_MAINSITE')) die("Critical Error!");
 //set_magic_quotes_runtime(0);
 //ini_set("magic_quotes_gpc", '0');
 
+/*
+//echo '<pre>';
 //ini_set('display_errors', 1);
-//error_reporting(E_ALL);
+//error_reporting(E_ALL & ~(E_NOTICE|E_DEPRECATED));
+//error_reporting(E_ALL & ~(E_DEPRECATED));
+//echo '</pre>';
+ */
 
+//echo $_SERVER['REQUEST_URI'];
 //$path = '/usr/lib/pear';
 //set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 
 include_once realpath(dirname(__FILE__) . '/../config') . '/common.php';		// fphp
 
-
+if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest')) {
+    define("IS_AJAX", TRUE);
+} else {
+    define("IS_AJAX", FALSE);
+}
 
 include_once(PATH_INCLUDES . 'Zend/Loader.php');
 spl_autoload_register('Zend_Loader::autoload');
@@ -107,7 +118,8 @@ if (!(IS_AJAX === true) && $_SESSION['sess_id']) $_SESSION["sess_newmails"] = nu
 
 //Access Control List
 include_once(PATH_INCLUDES . "class/liveuser.php" );
-
+/* common vars */
+$smarty->assign('base_url', $cfg['path']['url_site']);
 /**
  * UK IP
  */
@@ -118,7 +130,60 @@ $userArea = ip2area($_SERVER['REMOTE_ADDR']);
 $smarty->assign("userArea", $userArea);
 
 /* FB and login vars init */
+$smarty->assign("app_id", $cfg['facebook']['app_id']);
 $smarty->assign("url", $fb_auth_url);
 $smarty->assign('sess_id', $_SESSION["sess_id"]);
 $smarty->assign('logout_url', $logout_url);
+if($fb_user_id) {
+    $sql_login = "
+        SELECT `tu`.`screenname`, `tu`.`pass`
+        FROM `tblUsers` AS `tu`
+        INNER JOIN `tblFBData` AS `tfd` ON `tfd`.`user_id` = `tu`.`id`
+        WHERE `tfd`.`fb_id` = '$fb_user_id'
+        AND `disabled` = 'N'
+    ";
+    if ($result = $db->get_row($sql_login)) {
+        $screenname = trim($result['screenname']);
+        $pass = trim($result['pass']);
+        if (!$screenname) {
+            $screenname = '';
+        }
+        if (!$pass) {
+            $pass = '';
+        }
+    }
+    $common_data = array (
+        'screenname'                        => $screenname,
+        'pass'                              => $pass,
+    );
+    $smarty->assign('screenname', $screenname);
+    
+} else {
+    $check_username = $_SESSION['sess_screenname'];
+    $check_password = $_SESSION['sess_pass'];
+    if(!isset($check_username)) {
+        $check_username = '';
+    }
+    if(!isset($check_password)) {
+        $check_password = '';
+    }
+    if ($check_username !== '' && $check_password !== '') {
+        $sql = "SELECT `id`, `screenname`, `pass` FROM `tblUsers` WHERE `screenname` = '" . $check_username . "' AND `pass` = '" . $check_password . "' AND `disabled` = 'N'";
+        if ($result = $db->get_row($sql)) {
+            $screenname = trim($result['screenname']);
+            $pass = trim($result['pass']);
+            if (!$screenname) {
+                $screenname = '';
+            }
+            if (!$pass) {
+                $pass = '';
+            }
+        }
+    }
+    $common_data = array (
+        'screenname'                        => $screenname,
+        'pass'                              => $pass,
+    );
+    $smarty->assign('screenname', $screenname);
+}
 /* End FB and login vars init */

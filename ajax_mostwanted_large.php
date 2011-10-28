@@ -50,4 +50,3 @@ $smarty->unregister_function('location');
 // .. end smarty .. //
 
 include ("./includes/" . "require" . "/" . "site_foot.php");
-?>

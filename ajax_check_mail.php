@@ -2,7 +2,7 @@
 /* $Id: ajax_check_mail.php 528 2008-06-12 15:27:14Z andi $ */
 
 define("IN_MAINSITE", true);
-define("IS_AJAX", true);
+//define("IS_AJAX", true);
 
 include ("includes/require/site_head.php");
 

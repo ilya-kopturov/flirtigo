@@ -89,4 +89,4 @@ $smarty->unregister_function('adddelete');
 // ...  end smarty   ... //
 
 include ("includes/require/site_foot.php");
-?>
+

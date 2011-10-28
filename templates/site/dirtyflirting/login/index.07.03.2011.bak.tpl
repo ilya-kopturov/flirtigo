@@ -2,14 +2,14 @@
 <div class="center">
 <div class="index_container">
 </div>
-<div class="clear"><img src="/images/pixel.gif"
+<div class="clear"><img src="{$base_url}images/pixel.gif"
 	style="width: 5px;" /></div>
 </div>
 
 {include file="site/dirtyflirting/login/menu.tpl"}
 
 <div class="center">
-<div class="clear"><img src="/images/pixel.gif"
+<div class="clear"><img src="{$base_url}images/pixel.gif"
 	style="width: 5px;" /></div>
 <div class="index_container">
 <div id="featured_block" class="grey">
@@ -37,10 +37,10 @@
 $videogallery[video].id}
 <div class="pic_user">
 <div class="thumb"><a
-	href="/profile/{screenname user_id=$videogallery[video].id}">
+	href="{$base_url}profile/{screenname user_id=$videogallery[video].id}">
 <!--	<img class="bg" 	src="{$cfg.template.url_template}login/images/hornybook_bgpicture.gif" 
 	alt="" /></a> --!>
-	<img class="photo" src="/showphoto.php?id={$videogallery[video].id}&m=Y&t=s&p=1" alt="" />
+	<img class="photo" src="{$base_url}showphoto.php?id={$videogallery[video].id}&m=Y&t=s&p=1" alt="" />
 </div>
 <div class="smalltext info">{$videogallery[video].screenname}</div>
 </div>
@@ -50,7 +50,7 @@ $videogallery[video].id}
 	alt="" style="width: 94px; height: 94px; border: 1px;" /></div>
 {/if} {if $smarty.section.video.iteration % 4 == 0 &&
 !$smarty.section.video.last}
-<div class="clear"><img src="/images/pixel.gif"
+<div class="clear"><img src="{$base_url}images/pixel.gif"
 	style="width: 1px;" alt="" /></div>
 {/if} {/section}</div>
 <div id="Picture_Gallery"
@@ -59,10 +59,10 @@ $videogallery[video].id}
 $picturegallery[picture].id}
 <div class="pic_user">
 <div class="thumb"><a id="a_{$picturegallery[picture].id}"
-	href="/profile/{screenname user_id=$picturegallery[picture].id}">
+	href="{$base_url}profile/{screenname user_id=$picturegallery[picture].id}">
 	<!-- <img	class="bg" src="{$cfg.template.url_template}login/images/hornybook_bgpicture.gif" alt="" /></a> --!>
         <img class="photo" id="pic_{$picturegallery[picture].id}"
-	src="/showphoto.php?id={$picturegallery[picture].id}&m=Y&t=s&p=1"
+	src="{$base_url}showphoto.php?id={$picturegallery[picture].id}&m=Y&t=s&p=1"
 	alt="" /></div>
 <div id="div_{$picturegallery[picture].id}" class="smalltext info">{$picturegallery[picture].screenname}</div>
 </div>
@@ -72,11 +72,11 @@ $picturegallery[picture].id}
 	alt="" style="width: 94px; height: 94px; border: 0px;" /></div>
 {/if} {if $smarty.section.picture.iteration % 4 == 0 &&
 !$smarty.section.picture.last}
-<div class="clear"><img src="/images/pixel.gif"
+<div class="clear"><img src="{$base_url}images/pixel.gif"
 	style="width: 1px;" alt="" /></div>
 {/if} {/section}</div>
 </div>
-<div class="clear"><img src="/images/pixel.gif"
+<div class="clear"><img src="{$base_url}images/pixel.gif"
 	style="width: 5px;" /></div>
 <div class="more">[<a href="/mem_videogallery.php">more</a>]</div>
 </div>
@@ -107,13 +107,13 @@ $picturegallery[picture].id}
 <div style="align: center;">Inbox is empty</div>
 {/section}</div>
 </div>
-<div class="clear"><img src="/images/pixel.gif"
+<div class="clear"><img src="{$base_url}images/pixel.gif"
 	style="width: 5px;" /></div>
 <div class="more">[<a href="/mem_mail.php">more</a>]</div>
 </div>
 
 </div>
-<div class="clear"><img src="/images/pixel.gif"
+<div class="clear"><img src="{$base_url}images/pixel.gif"
 	style="height: 10px;" /></div>
 <div class="index_container">
 <div class="grey" id="my_hb_block">
@@ -140,11 +140,11 @@ $picturegallery[picture].id}
 {section name="view" loop=$viewedme max=4} {if $viewedme[view].id}
 <div class="pic_user">
 <div class="thumb"><a
-	href="/profile/{screenname user_id=$viewedme[view].id}"><img
+	href="{$base_url}profile/{screenname user_id=$viewedme[view].id}"><img
 	class="bg"
 	src="{$cfg.template.url_template}login/images/hornybook_bgpicture.gif"
 	alt="" /></a> <img class="photo"
-	src="/showphoto.php?id={$viewedme[view].id}&m=Y&t=s&p=1" alt="" /></div>
+	src="{$base_url}showphoto.php?id={$viewedme[view].id}&m=Y&t=s&p=1" alt="" /></div>
 <div class="smalltext info">{$viewedme[view].screenname}</div>
 </div>
 {else}
@@ -157,11 +157,11 @@ $picturegallery[picture].id}
 {section name="hot" loop=$hotlist max=4} {if $hotlist[hot].id}
 <div class="pic_user">
 <div class="thumb"><a
-	href="/profile/{screenname user_id=$hotlist[hot].id}"><img
+	href="{$base_url}profile/{screenname user_id=$hotlist[hot].id}"><img
 	class="bg"
 	src="{$cfg.template.url_template}login/images/hornybook_bgpicture.gif"
 	alt="" /></a> <img class="photo"
-	src="/showphoto.php?id={$hotlist[hot].id}&m=Y&t=s&p=1" alt="" /></div>
+	src="{$base_url}showphoto.php?id={$hotlist[hot].id}&m=Y&t=s&p=1" alt="" /></div>
 <div id="div_{$hotlist[hot].id}" class="smalltext info">{$hotlist[hot].screenname}
 [<a href="javascript:;" style="font-weight: bold;"
 	onclick="removeHotBlock({$hotlist[hot].id});">x</a>]</div>
@@ -172,7 +172,7 @@ $picturegallery[picture].id}
 	alt="" /></div>
 {/if} {/section}</div>
 </div>
-<div class="clear"><img src="/images/pixel.gif"
+<div class="clear"><img src="{$base_url}images/pixel.gif"
 	style="width: 5px;" /></div>
 <div class="more">[<a id="myhornybook_more"
 	href="/mem_myprofile.php#Edit_Hot__Block_Lists">more</a>]</div>
@@ -184,7 +184,7 @@ $picturegallery[picture].id}
 <div class="thumb"><img
 	src="{$cfg.template.url_template}login/images/hornybook_bgpicture.gif"
 	class="bg" alt="{$smarty.session.sess_screenname}" /> <img
-	src="/showphoto.php?id={$smarty.session.sess_id}&m=Y&t=s&p=1" alt=""
+	src="{$base_url}showphoto.php?id={$smarty.session.sess_id}&m=Y&t=s&p=1" alt=""
 	class="photo" /></div>
 <div class="normaltext text_prev">Photo Preview</div>
 <div class="normaltext text_discreet">Discreet:
@@ -203,12 +203,12 @@ $smarty.session.sess_picturepending == 'Y'}Pending Approval{/if}</div>
 <div class="smalltext text_pa">{if
 $smarty.session.sess_videopending}Pending Approval{/if}</div>
 </div>
-<div class="clear"><img src="/images/pixel.gif"
+<div class="clear"><img src="{$base_url}images/pixel.gif"
 	style="height: 2px;" alt="" /></div>
 <div class="normaltext text_rating">Your rating: {rateme
 rating=$smarty.session.sess_rating id=$smarty.session.sess_id
 screenname=$smarty.session.sess_screenname}</div>
-	<div class="clear"><img src="/images/pixel.gif"
+	<div class="clear"><img src="{$base_url}images/pixel.gif"
 	style="width: 5px;" /></div>
 <div class="edit_link">[<a href="/mem_myprofile.php#Edit_Profile">edit</a>]</div>
 </div>
