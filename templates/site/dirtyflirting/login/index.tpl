@@ -25,8 +25,6 @@
                 </div>
             </div>
 
-
-
             <div class="tabs_content">
                 <div id="Video_Gallery_Upgrade"	style="display: none; padding: 0px; margin: 0px; border: 0px;"></div>
                 <div id="Video_Gallery"	style="display: none; padding: 0px; margin: 0px; border: 0px;">

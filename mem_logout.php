@@ -5,8 +5,15 @@ define("IN_MAINSITE", TRUE);
 
 include ("./includes/" . "require" . "/" . "site_head.php");
 
+$fb_coockie_id = "fbsr_" . $cfg['facebook']['app_id'];
+if(isset($fb_coockie_id)) {
+    setcookie("fbsr_" . $cfg['facebook']['app_id'], '', time()-3600, "/");
+}
+
+session_unregister("login_type");
 session_unregister("sess_id");
 session_unregister("sess_screenname");
+session_unregister("sess_pass");
 session_unregister("sess_sex");
 session_unregister("sess_looking");
 session_unregister("sess_accesslevel");

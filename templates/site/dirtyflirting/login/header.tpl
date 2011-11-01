@@ -29,10 +29,14 @@
             });
         </script>
         {/literal}
-
+        <script type="text/javascript">
+            var appId = '{$app_id}';
+            var BASE_URL = '{$base_url}';
+        </script>
+        <script type="text/javascript" src="{$base_url}js/fb_auth.js"></script>
     </head>
     <body onLoad="window.scrollTo(0,0);">
-
+        <div id="fb-root"></div>
         <table class="center header">
             <tr>
                 <td class="h_pic">

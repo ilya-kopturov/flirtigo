@@ -10,6 +10,7 @@ $cfg['path']['url_content']   = "http://flirtigo.com.dev/media/media/";
 $cfg['path']['url_photos']    = "http://flirtigo.com.dev/media/media/photos/";
 $cfg['path']['url_videos']    = "http://flirtigo.com.dev/media/media/videos/";
 $cfg['path']['url_attachments']    = "http://flirtigo.com.dev/media/media/email/";
+$cfg['path']['url_cookie']      = ".flirtigo.com.dev";
 //filesystem related
 $cfg['path']['dir_site']      = "/home/www/flirtigo/flirtigo.com/";
 $cfg['path']['dir_include']   = "/home/www/flirtigo/flirtigo.com/includes/";

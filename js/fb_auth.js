@@ -10,7 +10,11 @@ window.fbAsyncInit = function() {
     // Additional initialization code here
     //alert('init:'+appId);
     FB.Event.subscribe('auth.login', function(response) {
-        window.location = /*canvas_url;*/  BASE_URL + 'fb_login.php';
+        FB.api('/me', function(response) {
+            window.location.reload();
+        });
+        //window.location.reload();
+        //window.location = BASE_URL; + 'fb_login.php';
         //top.location = canvas_url;
         //top.location.reload();
     });

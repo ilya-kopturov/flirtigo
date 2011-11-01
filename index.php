@@ -4,12 +4,11 @@
 define("IN_MAINSITE", TRUE);
 
 include ("./includes/" . "require" . "/" . "site_head.php");
-
 // redirect to fb login page if user logged in  facebook? but Session expired
-
 if($fb_user_id && (!isset($_SESSION['login_type']))) {
     header("Location: " . $cfg['path']['url_site'] . "fb_login.php");
 }
+
 if(isset($_SESSION['login_type']) && $_SESSION['login_type'] > 0) {
     header("Location: " . $cfg['path']['url_site'] . "mem_index.php");
 }

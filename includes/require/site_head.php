@@ -134,7 +134,7 @@ $smarty->assign("app_id", $cfg['facebook']['app_id']);
 $smarty->assign("url", $fb_auth_url);
 $smarty->assign('sess_id', $_SESSION["sess_id"]);
 $smarty->assign('logout_url', $logout_url);
-if($fb_user_id) {
+if($fb_user_id) {    
     $sql_login = "
         SELECT `tu`.`screenname`, `tu`.`pass`
         FROM `tblUsers` AS `tu`

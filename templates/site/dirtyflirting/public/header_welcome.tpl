@@ -82,7 +82,7 @@
 	</div>
 
     <div class="logout_container">
-        [<a href="{$canvas_url}" class="logout" target="_top">Home</a>]
+        [<a href="{$base_url}" class="logout" target="_top">Home</a>]
     </div>
 </div>
 
